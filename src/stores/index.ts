@@ -1,42 +1,66 @@
 import { create } from "zustand";
-import { listings as mockListings, type Listing } from "@/lib/mock-data";
-
-type User = { id: string; name: string; email: string; avatar?: string; role: "user" | "moderator" | "admin" } | null;
+import { User, Listing, PaginatedResponse } from "@/lib/types";
+import { removeAuthToken } from "@/lib/api";
+import { listingService, GetListingsParams } from "@/services/listing.service";
 
 type AuthState = {
-  user: User;
-  login: (email: string) => void;
+  user: User | null;
+  isAuthenticated: boolean;
+  setUser: (user: User | null) => void;
   logout: () => void;
 };
 export const useAuthStore = create<AuthState>((set) => ({
-  user: { id: "me", name: "Jordan Lee", email: "jordan@uni.edu", avatar: "https://i.pravatar.cc/100?img=8", role: "user" },
-  login: (email) => set({ user: { id: "me", name: "Jordan Lee", email, role: "user" } }),
-  logout: () => set({ user: null }),
+  user: null,
+  isAuthenticated: false,
+  setUser: (user) => set({ user, isAuthenticated: !!user }),
+  logout: () => {
+    removeAuthToken();
+    set({ user: null, isAuthenticated: false });
+  },
 }));
 
 type ListingState = {
-  listings: Listing[];
-  addListing: (l: Listing) => void;
+  data: PaginatedResponse<Listing> | null;
+  isLoading: boolean;
+  error: string | null;
+  fetchListings: (params?: GetListingsParams) => Promise<void>;
 };
 export const useListingStore = create<ListingState>((set) => ({
-  listings: mockListings,
-  addListing: (l) => set((s) => ({ listings: [l, ...s.listings] })),
+  data: null,
+  isLoading: false,
+  error: null,
+  fetchListings: async (params) => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await listingService.getListings(params);
+      set({ data: response, isLoading: false });
+    } catch (err: any) {
+      set({ error: err.message || "Failed to fetch listings", isLoading: false });
+    }
+  },
 }));
 
 type FavoriteState = {
-  ids: string[];
-  toggle: (id: string) => void;
-  has: (id: string) => boolean;
+  ids: number[];
+  setIds: (ids: number[]) => void;
+  toggle: (id: number) => void;
+  has: (id: number) => boolean;
 };
 export const useFavoriteStore = create<FavoriteState>((set, get) => ({
-  ids: ["l1", "l4", "l7"],
+  ids: [],
+  setIds: (ids) => set({ ids }),
   toggle: (id) =>
     set((s) => ({ ids: s.ids.includes(id) ? s.ids.filter((x) => x !== id) : [...s.ids, id] })),
   has: (id) => get().ids.includes(id),
 }));
 
-type NotifState = { unread: number; markAllRead: () => void };
+type NotifState = {
+  unread: number;
+  setUnread: (c: number) => void;
+  markAllRead: () => void;
+};
 export const useNotificationStore = create<NotifState>((set) => ({
-  unread: 2,
+  unread: 0,
+  setUnread: (unread) => set({ unread }),
   markAllRead: () => set({ unread: 0 }),
 }));

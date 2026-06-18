@@ -1,0 +1,11 @@
+.git
+.env
+node_modules
+dist
+backend/vendor
+backend/.env
+backend/storage/*.key
+backend/storage/logs/*.log
+backend/storage/framework/cache/data/*
+backend/storage/framework/views/*
+backend/storage/framework/sessions/*

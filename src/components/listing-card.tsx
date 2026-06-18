@@ -1,33 +1,45 @@
+import React from "react";
 import { Link } from "@tanstack/react-router";
 import { Heart, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { useFavoriteStore } from "@/stores";
-import type { Listing } from "@/lib/mock-data";
+import type { Listing } from "@/lib/types";
 
-export function ListingCard({ listing }: { listing: Listing }) {
-  const { has, toggle } = useFavoriteStore();
-  const fav = has(listing.id);
+export const ListingCard = React.memo(function ListingCard({ listing }: { listing: Listing }) {
+  // Use Zustand selectors to prevent unnecessary re-renders of all cards when one is toggled
+  const fav = useFavoriteStore((state) => state.has(listing.id));
+  const toggle = useFavoriteStore((state) => state.toggle);
+
   return (
     <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
       <Link
         to="/listings/$id"
-        params={{ id: listing.id }}
+        params={{ id: listing.id.toString() }}
         className="group block overflow-hidden rounded-2xl bg-card border border-border hover:shadow-lg transition-shadow"
       >
         <div className="relative aspect-square overflow-hidden bg-muted">
           <img
-            src={listing.image}
+            src={
+              listing.images && listing.images.length > 0
+                ? listing.images[0].image_path
+                : "https://via.placeholder.com/600"
+            }
             alt={listing.title}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <button
-            onClick={(e) => { e.preventDefault(); toggle(listing.id); }}
+            onClick={(e) => {
+              e.preventDefault();
+              toggle(listing.id);
+            }}
             className="absolute top-3 right-3 grid h-9 w-9 place-items-center rounded-full bg-card/90 backdrop-blur shadow-sm hover:scale-110 transition-transform"
             aria-label="Save"
           >
-            <Heart className={`h-4 w-4 ${fav ? "fill-destructive text-destructive" : "text-foreground"}`} />
+            <Heart
+              className={`h-4 w-4 ${fav ? "fill-destructive text-destructive" : "text-foreground"}`}
+            />
           </button>
           <Badge variant="secondary" className="absolute top-3 left-3 bg-card/90 backdrop-blur">
             {listing.condition}
@@ -39,14 +51,15 @@ export function ListingCard({ listing }: { listing: Listing }) {
             <div className="text-base font-bold text-primary shrink-0">${listing.price}</div>
           </div>
           <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground">
-            <span className="capitalize">{listing.category}</span>
+            <span className="capitalize">{listing.category?.name || "Uncategorized"}</span>
             <span className="flex items-center gap-1">
               <Star className="h-3 w-3 fill-warning text-warning" />
-              {listing.seller.rating}
+              {listing.user?.name || "Unknown"}
             </span>
           </div>
         </div>
       </Link>
     </motion.div>
   );
-}
+});
+

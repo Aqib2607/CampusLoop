@@ -1,0 +1,263 @@
+{
+  "project": "CampusLoop",
+  "task": "Generate Comprehensive Database Seeder System",
+  "critical_instruction": "Before generating any code, analyze ALL documents inside the /docs directory. Treat the documents as the single source of truth. Read and validate against: Requirements Architecture Document, Functional Specification Document, Database Architecture Document, PRD, Design Document, Technology Stack Document, System Architecture Document, API Specification Document, Security Architecture Document, Role Permission Matrix, OpenAPI Documentation, and Deployment & DevOps Guide. Then analyze every migration, model, factory, enum, relationship, policy, seeder, service, and API resource currently present in the Laravel backend.",
+  "objective": "Generate a realistic, interconnected, production-quality dataset across all database tables so the frontend can be fully demonstrated using real database-driven content without any mock data.",
+  "analysis_phase": {
+    "required": true,
+    "steps": [
+      "Analyze all database tables.",
+      "Analyze all foreign key relationships.",
+      "Analyze all indexes.",
+      "Analyze all enums.",
+      "Analyze all model relationships.",
+      "Analyze all business rules from the architecture documents.",
+      "Analyze all role permissions.",
+      "Analyze all API contracts.",
+      "Analyze all validation requirements.",
+      "Generate a dependency map before generating seeders."
+    ]
+  },
+  "seeder_strategy": {
+    "required": true,
+    "instructions": [
+      "Use Laravel Seeders.",
+      "Use Laravel Factories.",
+      "Generate realistic interconnected records.",
+      "Maintain referential integrity.",
+      "Respect all foreign key constraints.",
+      "Respect all business rules.",
+      "Generate data that fully exercises the frontend UI."
+    ]
+  },
+  "roles_dataset": {
+    "roles": [
+      "Admin",
+      "Moderator",
+      "Student",
+      "Teacher",
+      "Staff"
+    ],
+    "requirements": [
+      "Generate all permissions.",
+      "Assign permissions according to Role Permission Matrix.",
+      "Create role seeders."
+    ]
+  },
+  "users_dataset": {
+    "requirements": [
+      "Generate 1 Super Admin.",
+      "Generate 5 Moderators.",
+      "Generate 50 Teachers.",
+      "Generate 50 Staff.",
+      "Generate 500 Students."
+    ],
+    "realism": [
+      "Use realistic Bangladeshi names.",
+      "Use realistic universities.",
+      "Use realistic departments.",
+      "Generate avatars.",
+      "Generate bios.",
+      "Generate phone numbers.",
+      "Generate varying activity levels."
+    ]
+  },
+  "categories_dataset": {
+    "requirements": [
+      "Books",
+      "Electronics",
+      "Furniture",
+      "Lab Equipment",
+      "Clothing",
+      "Notes",
+      "Services",
+      "Others"
+    ]
+  },
+  "marketplace_dataset": {
+    "requirements": [
+      "Generate 3000 listings.",
+      "Distribute listings across all categories.",
+      "Generate realistic titles.",
+      "Generate realistic descriptions.",
+      "Generate realistic pricing.",
+      "Generate realistic conditions.",
+      "Generate realistic seller assignments."
+    ],
+    "status_distribution": {
+      "Published": 2200,
+      "Pending": 250,
+      "Approved": 150,
+      "Rejected": 100,
+      "Paused": 100,
+      "Sold": 150,
+      "Archived": 50
+    }
+  },
+  "listing_images_dataset": {
+    "requirements": [
+      "Generate 3-8 images per listing.",
+      "Use realistic placeholder image URLs.",
+      "Ensure every published listing contains images."
+    ]
+  },
+  "favorites_dataset": {
+    "requirements": [
+      "Generate 8000 favorite relationships.",
+      "Avoid duplicates.",
+      "Distribute activity realistically."
+    ]
+  },
+  "messaging_dataset": {
+    "requirements": [
+      "Generate 2500 conversations.",
+      "Generate 50000 messages.",
+      "Create realistic buyer-seller conversations.",
+      "Generate conversation history.",
+      "Generate message timestamps.",
+      "Generate delivered and seen statuses."
+    ]
+  },
+  "message_attachments_dataset": {
+    "requirements": [
+      "Generate image attachments.",
+      "Generate PDF attachments.",
+      "Generate document attachments.",
+      "Generate voice message attachments."
+    ]
+  },
+  "reviews_dataset": {
+    "requirements": [
+      "Generate 2000 reviews.",
+      "Generate realistic review text.",
+      "Generate realistic rating distributions.",
+      "Calculate rating summaries."
+    ]
+  },
+  "reports_dataset": {
+    "requirements": [
+      "Generate 400 reports.",
+      "Listing reports.",
+      "Profile reports.",
+      "Message reports."
+    ],
+    "statuses": [
+      "Open",
+      "Under Review",
+      "Resolved",
+      "Dismissed"
+    ]
+  },
+  "moderation_dataset": {
+    "requirements": [
+      "Generate moderation actions.",
+      "Generate suspensions.",
+      "Generate warnings.",
+      "Generate approvals.",
+      "Generate rejections."
+    ]
+  },
+  "notifications_dataset": {
+    "requirements": [
+      "Generate 15000 notifications.",
+      "Mix read and unread notifications.",
+      "Generate all notification types defined in architecture."
+    ]
+  },
+  "analytics_dataset": {
+    "requirements": [
+      "Generate daily statistics.",
+      "Generate historical platform activity.",
+      "Generate growth trends for charts."
+    ]
+  },
+  "ai_provider_dataset": {
+    "requirements": [
+      "Create OpenAI provider.",
+      "Create Gemini provider.",
+      "Create Groq provider.",
+      "Create Claude provider."
+    ]
+  },
+  "api_key_dataset": {
+    "requirements": [
+      "Generate multiple API keys per provider.",
+      "Generate usage logs.",
+      "Generate success metrics.",
+      "Generate failure metrics.",
+      "Generate realistic rotation history."
+    ],
+    "security": [
+      "Never store plaintext keys.",
+      "Encrypt all seeded keys using application encryption."
+    ]
+  },
+  "ai_moderation_dataset": {
+    "requirements": [
+      "Generate AI moderation records.",
+      "Generate risk scores.",
+      "Generate spam detections.",
+      "Generate scam detections.",
+      "Generate duplicate listing detections."
+    ]
+  },
+  "audit_logs_dataset": {
+    "requirements": [
+      "Generate 25000 audit log entries.",
+      "Generate login activities.",
+      "Generate CRUD activities.",
+      "Generate moderation activities.",
+      "Generate API key changes."
+    ]
+  },
+  "user_settings_dataset": {
+    "requirements": [
+      "Generate settings for every user.",
+      "Generate realistic notification preferences.",
+      "Generate realistic privacy settings."
+    ]
+  },
+  "quality_validation": {
+    "required": true,
+    "checks": [
+      "Verify all foreign key integrity.",
+      "Verify all relationships.",
+      "Verify all role assignments.",
+      "Verify all dashboard statistics populate correctly.",
+      "Verify all marketplace pages contain data.",
+      "Verify all messaging screens contain conversations.",
+      "Verify all charts display data.",
+      "Verify all admin pages display records.",
+      "Verify all moderator pages display records.",
+      "Verify no table remains empty unless intentionally designed."
+    ]
+  },
+  "deliverables": [
+    "DatabaseSeeder.php",
+    "RoleSeeder.php",
+    "PermissionSeeder.php",
+    "AdminSeeder.php",
+    "ModeratorSeeder.php",
+    "UserSeeder.php",
+    "CategorySeeder.php",
+    "ListingSeeder.php",
+    "ListingImageSeeder.php",
+    "FavoriteSeeder.php",
+    "ConversationSeeder.php",
+    "MessageSeeder.php",
+    "AttachmentSeeder.php",
+    "ReviewSeeder.php",
+    "RatingSummarySeeder.php",
+    "ReportSeeder.php",
+    "ModerationSeeder.php",
+    "NotificationSeeder.php",
+    "AnalyticsSeeder.php",
+    "AIProviderSeeder.php",
+    "APIKeySeeder.php",
+    "AIModerationSeeder.php",
+    "AuditLogSeeder.php",
+    "UserSettingsSeeder.php",
+    "All Required Factories"
+  ],
+  "final_requirement": "The resulting database must be large enough that every page of the CampusLoop frontend appears fully operational using real backend-driven data, with no mock data, placeholders, empty states, or demo content required."
+}

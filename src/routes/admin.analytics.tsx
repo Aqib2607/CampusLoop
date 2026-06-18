@@ -1,16 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
-import { analyticsData } from "@/lib/mock-data";
-
+import {
+  LineChart,
+  Line,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  CartesianGrid,
+} from "recharts";
+import { useQuery } from "@tanstack/react-query";
+import { adminService } from "@/services/admin.service";
 export const Route = createFileRoute("/admin/analytics")({ component: AnalyticsPage });
 
 function AnalyticsPage() {
+  const { data: statsData } = useQuery({
+    queryKey: ["admin_dashboard"],
+    queryFn: () => adminService.getDashboardStats(),
+  });
+
+  const stats = statsData?.data;
+
   const cards = [
-    { label: "Total Users", value: "12,438", delta: "+8.2%" },
-    { label: "Listings", value: "3,481", delta: "+12.1%" },
-    { label: "Messages", value: "184k", delta: "+22.4%" },
-    { label: "Reviews", value: "9,712", delta: "+5.7%" },
+    { label: "Total Users", value: stats?.users || 0, delta: "+0.0%" },
+    { label: "Listings", value: stats?.listings || 0, delta: "+0.0%" },
+    { label: "Conversations", value: stats?.conversations || 0, delta: "+0.0%" },
+    { label: "Open Reports", value: stats?.open_reports || 0, delta: "+0.0%" },
   ];
+
+  const chartData: any[] = []; // Not yet supported by backend API
+
   return (
     <div>
       <h1 className="text-2xl md:text-3xl font-bold mb-6">Analytics</h1>
@@ -24,34 +44,78 @@ function AnalyticsPage() {
         ))}
       </div>
       <div className="grid lg:grid-cols-2 gap-4">
-        <Chart title="User Growth"><LineChart data={analyticsData}>
-          <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-          <XAxis dataKey="month" stroke="var(--color-muted-foreground)" fontSize={12} />
-          <YAxis stroke="var(--color-muted-foreground)" fontSize={12} />
-          <Tooltip contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: 12 }} />
-          <Line type="monotone" dataKey="users" stroke="var(--color-primary)" strokeWidth={2.5} dot={false} />
-        </LineChart></Chart>
-        <Chart title="Listing Growth"><LineChart data={analyticsData}>
-          <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-          <XAxis dataKey="month" stroke="var(--color-muted-foreground)" fontSize={12} />
-          <YAxis stroke="var(--color-muted-foreground)" fontSize={12} />
-          <Tooltip contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: 12 }} />
-          <Line type="monotone" dataKey="listings" stroke="var(--color-success)" strokeWidth={2.5} dot={false} />
-        </LineChart></Chart>
-        <Chart title="Message Activity"><BarChart data={analyticsData}>
-          <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-          <XAxis dataKey="month" stroke="var(--color-muted-foreground)" fontSize={12} />
-          <YAxis stroke="var(--color-muted-foreground)" fontSize={12} />
-          <Tooltip contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: 12 }} />
-          <Bar dataKey="messages" fill="var(--color-primary)" radius={[8, 8, 0, 0]} />
-        </BarChart></Chart>
-        <Chart title="Reports"><BarChart data={analyticsData.map(d => ({ ...d, reports: Math.round(d.users / 40) }))}>
-          <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-          <XAxis dataKey="month" stroke="var(--color-muted-foreground)" fontSize={12} />
-          <YAxis stroke="var(--color-muted-foreground)" fontSize={12} />
-          <Tooltip contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: 12 }} />
-          <Bar dataKey="reports" fill="var(--color-warning)" radius={[8, 8, 0, 0]} />
-        </BarChart></Chart>
+        <Chart title="User Growth">
+          <LineChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
+            <XAxis dataKey="month" stroke="var(--color-muted-foreground)" fontSize={12} />
+            <YAxis stroke="var(--color-muted-foreground)" fontSize={12} />
+            <Tooltip
+              contentStyle={{
+                background: "var(--color-card)",
+                border: "1px solid var(--color-border)",
+                borderRadius: 12,
+              }}
+            />
+            <Line
+              type="monotone"
+              dataKey="users"
+              stroke="var(--color-primary)"
+              strokeWidth={2.5}
+              dot={false}
+            />
+          </LineChart>
+        </Chart>
+        <Chart title="Listing Growth">
+          <LineChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
+            <XAxis dataKey="month" stroke="var(--color-muted-foreground)" fontSize={12} />
+            <YAxis stroke="var(--color-muted-foreground)" fontSize={12} />
+            <Tooltip
+              contentStyle={{
+                background: "var(--color-card)",
+                border: "1px solid var(--color-border)",
+                borderRadius: 12,
+              }}
+            />
+            <Line
+              type="monotone"
+              dataKey="listings"
+              stroke="var(--color-success)"
+              strokeWidth={2.5}
+              dot={false}
+            />
+          </LineChart>
+        </Chart>
+        <Chart title="Message Activity">
+          <BarChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
+            <XAxis dataKey="month" stroke="var(--color-muted-foreground)" fontSize={12} />
+            <YAxis stroke="var(--color-muted-foreground)" fontSize={12} />
+            <Tooltip
+              contentStyle={{
+                background: "var(--color-card)",
+                border: "1px solid var(--color-border)",
+                borderRadius: 12,
+              }}
+            />
+            <Bar dataKey="messages" fill="var(--color-primary)" radius={[8, 8, 0, 0]} />
+          </BarChart>
+        </Chart>
+        <Chart title="Reports">
+          <BarChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
+            <XAxis dataKey="month" stroke="var(--color-muted-foreground)" fontSize={12} />
+            <YAxis stroke="var(--color-muted-foreground)" fontSize={12} />
+            <Tooltip
+              contentStyle={{
+                background: "var(--color-card)",
+                border: "1px solid var(--color-border)",
+                borderRadius: 12,
+              }}
+            />
+            <Bar dataKey="reports" fill="var(--color-warning)" radius={[8, 8, 0, 0]} />
+          </BarChart>
+        </Chart>
       </div>
     </div>
   );
@@ -62,7 +126,9 @@ function Chart({ title, children }: { title: string; children: React.ReactElemen
     <div className="rounded-2xl bg-card border border-border p-5">
       <div className="font-semibold mb-4">{title}</div>
       <div className="h-64">
-        <ResponsiveContainer width="100%" height="100%">{children}</ResponsiveContainer>
+        <ResponsiveContainer width="100%" height="100%">
+          {children}
+        </ResponsiveContainer>
       </div>
     </div>
   );

@@ -12,5 +12,9 @@ const items: NavItem[] = [
 ];
 
 export const Route = createFileRoute("/dashboard")({
-  component: () => <SectionShell title="Dashboard" items={items}><Outlet /></SectionShell>,
+  component: () => (
+    <SectionShell title="Dashboard" items={items}>
+      <Outlet />
+    </SectionShell>
+  ),
 });

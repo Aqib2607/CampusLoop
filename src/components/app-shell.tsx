@@ -3,11 +3,30 @@ import { Search, Heart, MessageSquare, Bell, User, Home, Plus, LogIn } from "luc
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useNotificationStore } from "@/stores";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
+import echo from "@/lib/echo";
+import { useAuthStore } from "@/stores";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const hide = pathname === "/login" || pathname === "/register";
+  const { user } = useAuthStore();
+  const setUnread = useNotificationStore((s) => s.setUnread);
+  const unread = useNotificationStore((s) => s.unread);
+
+  useEffect(() => {
+    if (!user?.id) return;
+
+    const channelName = `App.Models.User.${user.id}`;
+    const channel = echo.private(channelName).listen(".notification.created", () => {
+      // Increment unread count globally
+      setUnread(unread + 1);
+    });
+
+    return () => {
+      echo.leave(channelName);
+    };
+  }, [user?.id, unread, setUnread]);
 
   if (hide) return <>{children}</>;
 
@@ -43,16 +62,24 @@ function TopBar() {
 
         <nav className="ml-auto flex items-center gap-1">
           <Link to="/listings" className="hidden md:block">
-            <Button variant="ghost" size="sm">Browse</Button>
+            <Button variant="ghost" size="sm">
+              Browse
+            </Button>
           </Link>
           <Link to="/favorites" className="hidden md:inline-flex">
-            <Button variant="ghost" size="icon"><Heart className="h-5 w-5" /></Button>
+            <Button variant="ghost" size="icon">
+              <Heart className="h-5 w-5" />
+            </Button>
           </Link>
           <Link to="/messages" className="hidden md:inline-flex">
-            <Button variant="ghost" size="icon"><MessageSquare className="h-5 w-5" /></Button>
+            <Button variant="ghost" size="icon">
+              <MessageSquare className="h-5 w-5" />
+            </Button>
           </Link>
           <Link to="/notifications" className="relative hidden md:inline-flex">
-            <Button variant="ghost" size="icon"><Bell className="h-5 w-5" /></Button>
+            <Button variant="ghost" size="icon">
+              <Bell className="h-5 w-5" />
+            </Button>
             {unread > 0 && (
               <Badge className="absolute -top-1 -right-1 h-5 min-w-5 px-1 bg-destructive text-destructive-foreground">
                 {unread}
@@ -60,7 +87,9 @@ function TopBar() {
             )}
           </Link>
           <Link to="/dashboard" className="hidden md:inline-flex">
-            <Button variant="ghost" size="icon"><User className="h-5 w-5" /></Button>
+            <Button variant="ghost" size="icon">
+              <User className="h-5 w-5" />
+            </Button>
           </Link>
           <Link to="/dashboard/listings">
             <Button size="sm" className="gap-1.5">
@@ -108,12 +137,17 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-10 grid gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <div className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground font-black">C</div>
+            <div className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground font-black">
+              C
+            </div>
             <span className="font-bold">CampusLoop</span>
           </div>
           <p className="text-sm text-muted-foreground">Buy, sell & connect across campus.</p>
         </div>
-        <FooterCol title="Marketplace" links={["Browse", "Categories", "Featured", "Create Listing"]} />
+        <FooterCol
+          title="Marketplace"
+          links={["Browse", "Categories", "Featured", "Create Listing"]}
+        />
         <FooterCol title="Company" links={["About", "Careers", "Press", "Contact"]} />
         <FooterCol title="Legal" links={["Terms", "Privacy", "Safety", "Guidelines"]} />
       </div>
@@ -129,7 +163,11 @@ function FooterCol({ title, links }: { title: string; links: string[] }) {
     <div>
       <div className="font-semibold mb-3 text-sm">{title}</div>
       <ul className="space-y-2 text-sm text-muted-foreground">
-        {links.map((l) => <li key={l} className="hover:text-foreground cursor-pointer">{l}</li>)}
+        {links.map((l) => (
+          <li key={l} className="hover:text-foreground cursor-pointer">
+            {l}
+          </li>
+        ))}
       </ul>
     </div>
   );

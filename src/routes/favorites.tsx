@@ -21,12 +21,18 @@ function FavoritesPage() {
         <div className="rounded-2xl border border-dashed border-border p-16 text-center">
           <Heart className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
           <div className="font-semibold">No favorites yet</div>
-          <p className="text-sm text-muted-foreground mt-1">Tap the heart on any listing to save it here.</p>
-          <Link to="/listings"><Button className="mt-5">Browse listings</Button></Link>
+          <p className="text-sm text-muted-foreground mt-1">
+            Tap the heart on any listing to save it here.
+          </p>
+          <Link to="/listings">
+            <Button className="mt-5">Browse listings</Button>
+          </Link>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {listings.map((l) => <ListingCard key={l.id} listing={l} />)}
+          {listings.map((l) => (
+            <ListingCard key={l.id} listing={l} />
+          ))}
         </div>
       )}
     </div>

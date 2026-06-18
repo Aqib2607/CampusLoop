@@ -3,13 +3,27 @@ import { motion } from "framer-motion";
 import { ArrowRight, Search, MessageCircle, ShieldCheck, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ListingCard } from "@/components/listing-card";
-import { categories, listings } from "@/lib/mock-data";
+import { useQuery } from "@tanstack/react-query";
+import { listingService } from "@/services/listing.service";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const Route = createFileRoute("/")({
   component: Landing,
 });
 
 function Landing() {
+  const { data: listingsData, isPending: isListingsPending } = useQuery({
+    queryKey: ["listings"],
+    queryFn: () => listingService.getListings(),
+  });
+  const { data: categoriesData, isPending: isCategoriesPending } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => listingService.getCategories(),
+  });
+
+  const listings = listingsData?.data || [];
+  const categories = categoriesData?.data || [];
+
   return (
     <div>
       {/* HERO */}
@@ -31,14 +45,19 @@ function Landing() {
               Buy, Sell & Connect <span className="text-primary">Across Campus</span>
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-2xl">
-              The student-only marketplace for textbooks, electronics, furniture, tickets, and everything in between. Safe, fast, and built for university life.
+              The student-only marketplace for textbooks, electronics, furniture, tickets, and
+              everything in between. Safe, fast, and built for university life.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/listings">
-                <Button size="lg" className="gap-2">Browse Listings <ArrowRight className="h-4 w-4" /></Button>
+                <Button size="lg" className="gap-2">
+                  Browse Listings <ArrowRight className="h-4 w-4" />
+                </Button>
               </Link>
               <Link to="/dashboard/listings">
-                <Button size="lg" variant="outline">Create Listing</Button>
+                <Button size="lg" variant="outline">
+                  Create Listing
+                </Button>
               </Link>
             </div>
             <div className="mt-10 flex items-center gap-6 text-sm text-muted-foreground">
@@ -53,17 +72,21 @@ function Landing() {
       {/* CATEGORIES */}
       <Section title="Browse by Category" subtitle="Find what you need, fast.">
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-          {categories.map((c) => (
-            <Link
-              key={c.id}
-              to="/listings"
-              className="flex flex-col items-center justify-center gap-2 rounded-xl bg-card border border-border p-4 hover:border-primary hover:shadow-sm transition"
-            >
-              <div className="text-3xl">{c.icon}</div>
-              <div className="text-sm font-semibold">{c.name}</div>
-              <div className="text-xs text-muted-foreground">{c.count}</div>
-            </Link>
-          ))}
+          {isCategoriesPending
+            ? Array.from({ length: 8 }).map((_, i) => (
+                <Skeleton key={i} className="h-24 w-full rounded-xl" />
+              ))
+            : categories.map((c) => (
+                <Link
+                  key={c.id}
+                  to="/listings"
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl bg-card border border-border p-4 hover:border-primary hover:shadow-sm transition"
+                >
+                  <div className="text-3xl">{c.icon || "📁"}</div>
+                  <div className="text-sm font-semibold">{c.name}</div>
+                  <div className="text-xs text-muted-foreground">{c.id}</div>
+                </Link>
+              ))}
         </div>
       </Section>
 
@@ -71,10 +94,20 @@ function Landing() {
       <Section
         title="Featured Listings"
         subtitle="Hand-picked deals from verified sellers."
-        action={<Link to="/listings"><Button variant="ghost" size="sm">View all →</Button></Link>}
+        action={
+          <Link to="/listings">
+            <Button variant="ghost" size="sm">
+              View all →
+            </Button>
+          </Link>
+        }
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {listings.slice(0, 8).map((l) => <ListingCard key={l.id} listing={l} />)}
+          {isListingsPending
+            ? Array.from({ length: 4 }).map((_, i) => (
+                <Skeleton key={i} className="h-80 w-full rounded-2xl" />
+              ))
+            : listings.slice(0, 8).map((l) => <ListingCard key={l.id} listing={l} />)}
         </div>
       </Section>
 
@@ -82,9 +115,21 @@ function Landing() {
       <Section title="How It Works" subtitle="Three simple steps.">
         <div className="grid md:grid-cols-3 gap-5">
           {[
-            { icon: Search, title: "Discover", desc: "Search listings from students in your university." },
-            { icon: MessageCircle, title: "Chat", desc: "Message sellers in real time, share photos & voice notes." },
-            { icon: ShieldCheck, title: "Trade Safely", desc: "Meet on campus, leave a review, build your rating." },
+            {
+              icon: Search,
+              title: "Discover",
+              desc: "Search listings from students in your university.",
+            },
+            {
+              icon: MessageCircle,
+              title: "Chat",
+              desc: "Message sellers in real time, share photos & voice notes.",
+            },
+            {
+              icon: ShieldCheck,
+              title: "Trade Safely",
+              desc: "Meet on campus, leave a review, build your rating.",
+            },
           ].map((s, i) => (
             <motion.div
               key={s.title}
@@ -108,9 +153,21 @@ function Landing() {
       <Section title="Loved by students" subtitle="Real reviews from our community.">
         <div className="grid md:grid-cols-3 gap-5">
           {[
-            { name: "Emma R.", uni: "Stanford", text: "Sold my textbooks in a day. So much easier than the campus bookstore." },
-            { name: "Daniel K.", uni: "NYU", text: "Found a desk and chair for half retail. Pickup was 5 minutes away." },
-            { name: "Aisha M.", uni: "UCLA", text: "The chat feature is fantastic — feels like Messenger but for campus." },
+            {
+              name: "Emma R.",
+              uni: "Stanford",
+              text: "Sold my textbooks in a day. So much easier than the campus bookstore.",
+            },
+            {
+              name: "Daniel K.",
+              uni: "NYU",
+              text: "Found a desk and chair for half retail. Pickup was 5 minutes away.",
+            },
+            {
+              name: "Aisha M.",
+              uni: "UCLA",
+              text: "The chat feature is fantastic — feels like Messenger but for campus.",
+            },
           ].map((t) => (
             <div key={t.name} className="rounded-2xl bg-card border border-border p-6">
               <div className="flex gap-0.5 mb-3">
@@ -119,7 +176,9 @@ function Landing() {
                 ))}
               </div>
               <p className="text-sm">"{t.text}"</p>
-              <div className="mt-4 text-sm font-semibold">{t.name} <span className="text-muted-foreground font-normal">· {t.uni}</span></div>
+              <div className="mt-4 text-sm font-semibold">
+                {t.name} <span className="text-muted-foreground font-normal">· {t.uni}</span>
+              </div>
             </div>
           ))}
         </div>
@@ -128,13 +187,25 @@ function Landing() {
   );
 }
 
-function Section({ title, subtitle, action, children }: { title: string; subtitle?: string; action?: React.ReactNode; children: React.ReactNode }) {
+function Section({
+  title,
+  subtitle,
+  action,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  action?: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
       <div className="flex items-end justify-between gap-4 mb-6">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
-          {subtitle && <p className="text-muted-foreground mt-1 text-sm md:text-base">{subtitle}</p>}
+          {subtitle && (
+            <p className="text-muted-foreground mt-1 text-sm md:text-base">{subtitle}</p>
+          )}
         </div>
         {action}
       </div>

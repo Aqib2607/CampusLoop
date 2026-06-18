@@ -1,0 +1,731 @@
+PROJECT NAME: CampusLoop
+
+PROJECT TYPE:
+Student Marketplace & Real-Time Communication Platform
+
+IMPORTANT:
+
+Build ONLY the backend system.
+
+Frontend already exists separately.
+
+Do NOT generate frontend pages.
+Do NOT generate frontend components.
+Do NOT generate UI logic.
+
+Build a production-ready Laravel backend with MySQL, Socket.IO integration support, AI provider management, API key rotation, moderation workflows, and RBAC.
+
+---
+
+TECH STACK
+
+Framework:
+Laravel 12+
+
+Language:
+PHP 8.3+
+
+Database:
+MySQL 8+
+
+Authentication:
+Laravel Sanctum
+
+Authorization:
+spatie/laravel-permission
+
+Storage:
+Cloudinary
+
+Realtime:
+Socket.IO Integration Layer
+
+Caching:
+Laravel Cache
+
+Future Scaling:
+Redis Ready
+
+Testing:
+PHPUnit
+
+Documentation:
+OpenAPI Compatible
+
+---
+
+ARCHITECTURE PATTERN
+
+Controller
+↓
+Service
+↓
+Repository
+↓
+Model
+↓
+Database
+
+Keep business logic out of controllers.
+
+---
+
+FOLDER STRUCTURE
+
+app/
+
+├── Http/
+│ ├── Controllers/
+│ ├── Requests/
+│ ├── Resources/
+│
+├── Models/
+│
+├── Services/
+│ ├── Auth/
+│ ├── Marketplace/
+│ ├── Messaging/
+│ ├── Moderation/
+│ ├── Notification/
+│ ├── AI/
+│
+├── Repositories/
+│
+├── Policies/
+│
+├── Events/
+│
+├── Listeners/
+│
+└── Jobs/
+
+---
+
+AUTHENTICATION MODULE
+
+Implement:
+
+* Register
+* Login
+* Logout
+* Password Reset
+* Token Revocation
+* Current User Endpoint
+
+Use:
+
+Laravel Sanctum
+
+---
+
+RBAC MODULE
+
+Roles:
+
+* Student
+* Teacher
+* Staff
+* Moderator
+* Admin
+
+Use:
+
+spatie/laravel-permission
+
+Create:
+
+* Role Seeder
+* Permission Seeder
+* Role Assignment System
+
+Protect all routes with permissions.
+
+---
+
+USER MANAGEMENT MODULE
+
+Features:
+
+* Profile Update
+* Avatar Update
+* User Settings
+* User Suspension
+* User Restoration
+
+Settings:
+
+* Notification Preferences
+* Default Listing Expiry
+* Privacy Settings
+
+---
+
+MARKETPLACE MODULE
+
+Create complete CRUD:
+
+Listings
+
+Categories
+
+Favorites
+
+Listing Images
+
+Listing Views
+
+Implement:
+
+* Create Listing
+* Edit Listing
+* Delete Listing
+* Pause Listing
+* Renew Listing
+* Mark Sold
+
+Statuses:
+
+Draft
+Pending
+Approved
+Rejected
+Published
+Paused
+Sold
+Archived
+
+---
+
+LISTING EXPIRY ENGINE
+
+Users can choose:
+
+7 Days
+15 Days
+30 Days
+60 Days
+
+Create scheduled job:
+
+CheckExpiredListingsJob
+
+Process:
+
+Expired
+↓
+Archived
+↓
+Notify Owner
+
+---
+
+MEDIA MANAGEMENT
+
+Integrate:
+
+Cloudinary
+
+Features:
+
+* Multiple Images
+* Upload Validation
+* Delete Images
+
+Allowed:
+
+jpg
+png
+webp
+
+Maximum:
+
+20MB
+
+---
+
+SEARCH SYSTEM
+
+Implement:
+
+* Keyword Search
+* Category Filter
+* Price Filter
+* Condition Filter
+* Rating Filter
+
+Use:
+
+MySQL Full Text Search
+
+Repository-based query builder.
+
+---
+
+FAVORITES MODULE
+
+Features:
+
+* Add Favorite
+* Remove Favorite
+* View Favorites
+
+Prevent duplicates.
+
+---
+
+MESSAGING MODULE
+
+Conversation System
+
+Message System
+
+Attachments
+
+Message Types:
+
+Text
+Image
+PDF
+Document
+Voice
+
+Statuses:
+
+Sent
+Delivered
+Seen
+
+Create:
+
+ConversationService
+
+MessageService
+
+AttachmentService
+
+---
+
+SOCKET INTEGRATION
+
+Prepare backend event architecture.
+
+Create:
+
+MessageSentEvent
+
+MessageDeliveredEvent
+
+MessageSeenEvent
+
+NotificationCreatedEvent
+
+Use Laravel Broadcasting abstraction.
+
+Frontend Socket.IO will subscribe later.
+
+---
+
+REVIEW SYSTEM
+
+Implement:
+
+* Seller Rating
+* Buyer Rating
+* Reviews
+
+Rules:
+
+One Review Per Transaction
+
+Store:
+
+Average Rating
+Review Count
+Positive Percentage
+
+---
+
+REPORTING SYSTEM
+
+Support:
+
+Listing Reports
+Profile Reports
+Message Reports
+
+Statuses:
+
+Open
+Under Review
+Resolved
+Dismissed
+
+---
+
+MODERATION SYSTEM
+
+Moderator Features:
+
+* Approve Listings
+* Reject Listings
+* Suspend Users
+* Resolve Reports
+
+Admin Features:
+
+* Full Override
+
+Create moderation action logs.
+
+---
+
+NOTIFICATION SYSTEM
+
+Database Notifications
+
+Events:
+
+* New Message
+* Listing Approved
+* Listing Rejected
+* Listing Sold
+* Review Received
+* Report Updated
+
+Statuses:
+
+Unread
+Read
+Archived
+
+---
+
+AI PROVIDER MANAGEMENT SYSTEM
+
+Create tables:
+
+ai_providers
+
+api_keys
+
+api_key_logs
+
+ai_moderation_logs
+
+Supported Providers:
+
+OpenAI
+Gemini
+Groq
+Claude
+
+Admin:
+
+Full Access
+
+Moderator:
+
+Create/View/Disable Keys
+
+---
+
+API KEY ROTATION ENGINE
+
+CRITICAL FEATURE
+
+Requirement:
+
+Multiple API keys per provider.
+
+Example:
+
+Groq Key 1
+Groq Key 2
+Groq Key 3
+
+When:
+
+* Rate Limited
+* Quota Exceeded
+* Timeout
+* Provider Failure
+
+Automatically:
+
+Switch To Next Active Key
+
+Workflow:
+
+Request
+↓
+Provider Manager
+↓
+Current Key
+↓
+Failure
+↓
+Next Key
+↓
+Continue
+
+Implement:
+
+ProviderManagerService
+
+ApiKeyRotationService
+
+Provider Drivers
+
+GroqProvider
+
+GeminiProvider
+
+OpenAIProvider
+
+ClaudeProvider
+
+---
+
+API KEY SECURITY
+
+Never store plain text.
+
+Encrypt:
+
+Crypt::encryptString()
+
+Decrypt only when used.
+
+Log:
+
+* Requests
+* Successes
+* Failures
+* Last Used
+* Error Codes
+
+---
+
+AI MODERATION MODULE
+
+Create:
+
+ModerationAIService
+
+Capabilities:
+
+* Spam Detection
+* Duplicate Listing Detection
+* Toxic Language Detection
+* Scam Detection
+
+Workflow:
+
+Listing Submitted
+↓
+AI Analysis
+↓
+Risk Score
+↓
+Moderator Queue
+
+Risk Levels:
+
+Low
+Medium
+High
+Critical
+
+---
+
+AUDIT LOGGING
+
+Create:
+
+audit_logs table
+
+Track:
+
+Login
+Logout
+Create
+Update
+Delete
+Suspend
+API Key Changes
+Moderation Actions
+
+Store:
+
+User ID
+Timestamp
+IP
+Action
+Old Values
+New Values
+
+---
+
+DATABASE REQUIREMENTS
+
+Generate migrations for:
+
+users
+roles
+permissions
+categories
+listings
+listing_images
+listing_views
+favorites
+conversations
+messages
+message_attachments
+reviews
+rating_summary
+reports
+moderation_actions
+notifications
+ai_providers
+api_keys
+api_key_logs
+ai_moderation_logs
+audit_logs
+user_settings
+
+Use:
+
+Soft Deletes
+
+Indexes
+
+Foreign Keys
+
+---
+
+API REQUIREMENTS
+
+Implement all endpoints from OpenAPI Specification.
+
+Base Route:
+
+/api/v1
+
+Use:
+
+API Resources
+
+Form Requests
+
+Policies
+
+Service Layer
+
+Repository Layer
+
+---
+
+SECURITY REQUIREMENTS
+
+Sanctum
+
+RBAC
+
+Rate Limiting
+
+Input Validation
+
+XSS Protection
+
+CSRF Protection
+
+File Validation
+
+Encrypted API Keys
+
+Audit Logging
+
+---
+
+TESTING
+
+Generate:
+
+Feature Tests
+
+API Tests
+
+Authentication Tests
+
+Listing Tests
+
+Messaging Tests
+
+Moderation Tests
+
+AI Rotation Tests
+
+---
+
+SEEDERS
+
+Create:
+
+RoleSeeder
+
+PermissionSeeder
+
+CategorySeeder
+
+AdminSeeder
+
+ModeratorSeeder
+
+---
+
+ENVIRONMENT VARIABLES
+
+APP_NAME=CampusLoop
+
+DB_CONNECTION=mysql
+
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+AI_PROVIDER=
+
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+
+---
+
+DELIVERABLES
+
+Generate:
+
+* Complete Laravel Backend
+* Migrations
+* Models
+* Controllers
+* Services
+* Repositories
+* Policies
+* Middleware
+* Events
+* Notifications
+* Seeders
+* Tests
+* API Documentation Compatibility
+
+Build the system modularly and production-ready.
+
+Do not generate frontend code.

@@ -1,0 +1,616 @@
+# openapi.yaml
+
+```yaml
+openapi: 3.0.3
+
+info:
+  title: CampusLoop API
+  description: Student Marketplace and Real-Time Communication Platform
+  version: 1.0.0
+
+servers:
+  - url: https://api.campusloop.com/api/v1
+    description: Production
+
+  - url: http://localhost:8000/api/v1
+    description: Development
+
+tags:
+  - name: Authentication
+  - name: Users
+  - name: Listings
+  - name: Categories
+  - name: Favorites
+  - name: Messaging
+  - name: Reviews
+  - name: Reports
+  - name: Notifications
+  - name: Moderator
+  - name: Admin
+  - name: AI Providers
+  - name: API Keys
+  - name: Analytics
+
+paths:
+
+  /auth/register:
+    post:
+      tags:
+        - Authentication
+      summary: Register User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: Registration successful
+
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: Login User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login successful
+
+  /auth/logout:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Authentication
+      summary: Logout User
+      responses:
+        '200':
+          description: Logout successful
+
+  /auth/me:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Authentication
+      summary: Current User
+      responses:
+        '200':
+          description: Current User
+
+  /profile:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Users
+      summary: Get Profile
+
+    put:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Users
+      summary: Update Profile
+
+  /settings:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Users
+      summary: User Settings
+
+    put:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Users
+      summary: Update Settings
+
+  /categories:
+    get:
+      tags:
+        - Categories
+      summary: List Categories
+
+  /listings:
+    get:
+      tags:
+        - Listings
+      summary: Get Listings
+
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: integer
+
+        - name: price_min
+          in: query
+          schema:
+            type: number
+
+        - name: price_max
+          in: query
+          schema:
+            type: number
+
+        - name: condition
+          in: query
+          schema:
+            type: string
+
+        - name: sort
+          in: query
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Listing Collection
+
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Listings
+      summary: Create Listing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateListingRequest'
+
+  /listings/{id}:
+    get:
+      tags:
+        - Listings
+      summary: Listing Details
+      parameters:
+        - $ref: '#/components/parameters/ListingId'
+
+    put:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Listings
+      summary: Update Listing
+      parameters:
+        - $ref: '#/components/parameters/ListingId'
+
+    delete:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Listings
+      summary: Delete Listing
+      parameters:
+        - $ref: '#/components/parameters/ListingId'
+
+  /listings/{id}/pause:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Listings
+      summary: Pause Listing
+
+  /listings/{id}/sold:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Listings
+      summary: Mark Listing Sold
+
+  /my-listings:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Listings
+      summary: Get Current User Listings
+
+  /listing-images/{id}:
+    delete:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Listings
+      summary: Delete Listing Image
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+
+  /favorites:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Favorites
+      summary: User Favorites
+
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Favorites
+      summary: Add Favorite
+
+  /conversations:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Messaging
+      summary: Get Conversations
+
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Messaging
+      summary: Start Conversation
+
+  /conversations/{id}/messages:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Messaging
+      summary: Get Messages
+
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Messaging
+      summary: Send Message
+
+  /reviews:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Reviews
+      summary: Create Review
+
+  /users/{id}/reviews:
+    get:
+      tags:
+        - Reviews
+      summary: Get User Reviews
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+
+  /reports/listing:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Reports
+      summary: Report Listing
+
+  /reports/profile:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Reports
+      summary: Report Profile
+
+  /reports/message:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Reports
+      summary: Report Message
+
+  /notifications:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Notifications
+      summary: Get Notifications
+
+  /moderator/listings/pending:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Moderator
+      summary: Pending Listings
+
+  /moderator/listings/{id}/approve:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Moderator
+      summary: Approve Listing
+
+  /moderator/listings/{id}/reject:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Moderator
+      summary: Reject Listing
+
+  /admin/dashboard:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Admin
+      summary: Dashboard Statistics
+
+  /admin/users:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Admin
+      summary: Manage Users
+
+  /admin/api-keys:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - API Keys
+      summary: List API Keys
+
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - API Keys
+      summary: Create API Key
+
+  /admin/api-keys/{id}/disable:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - API Keys
+      summary: Disable API Key
+
+  /admin/api-keys/{id}/enable:
+    post:
+      security:
+        - sanctumAuth: []
+      tags:
+        - API Keys
+      summary: Enable API Key
+
+  /admin/api-keys/{apiKey}/logs:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - API Keys
+      summary: View API Key Logs
+      parameters:
+        - name: apiKey
+          in: path
+          required: true
+          schema:
+            type: integer
+
+  /admin/analytics:
+    get:
+      security:
+        - sanctumAuth: []
+      tags:
+        - Analytics
+      summary: Platform Analytics
+
+components:
+
+  securitySchemes:
+    sanctumAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+
+    ListingId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+
+  schemas:
+
+    RegisterRequest:
+      type: object
+
+      required:
+        - name
+        - email
+        - password
+        - password_confirmation
+
+      properties:
+
+        name:
+          type: string
+
+        email:
+          type: string
+          format: email
+
+        password:
+          type: string
+
+        password_confirmation:
+          type: string
+
+    LoginRequest:
+      type: object
+
+      required:
+        - email
+        - password
+
+      properties:
+
+        email:
+          type: string
+
+        password:
+          type: string
+
+    CreateListingRequest:
+      type: object
+
+      required:
+        - title
+        - description
+        - category_id
+        - price
+        - condition
+
+      properties:
+
+        title:
+          type: string
+
+        description:
+          type: string
+
+        category_id:
+          type: integer
+
+        price:
+          type: number
+
+        condition:
+          type: string
+
+        negotiable:
+          type: boolean
+
+        expiry_days:
+          type: integer
+
+    User:
+      type: object
+
+      properties:
+
+        id:
+          type: integer
+
+        name:
+          type: string
+
+        email:
+          type: string
+
+        role:
+          type: string
+
+    Listing:
+      type: object
+
+      properties:
+
+        id:
+          type: integer
+
+        title:
+          type: string
+
+        description:
+          type: string
+
+        price:
+          type: number
+
+        category:
+          type: string
+
+        status:
+          type: string
+
+    ApiKey:
+      type: object
+
+      properties:
+
+        id:
+          type: integer
+
+        provider:
+          type: string
+
+        key_name:
+          type: string
+
+        priority:
+          type: integer
+
+        status:
+          type: boolean
+
+        requests_today:
+          type: integer
+
+        success_count:
+          type: integer
+
+        failure_count:
+          type: integer
+
+security:
+  - sanctumAuth: []
+```
+
+# OpenAPI Coverage
+
+Current coverage includes:
+
+* Authentication
+* User Profiles
+* Listings
+* Categories
+* Favorites
+* Messaging
+* Reviews
+* Reports
+* Notifications
+* Moderator Operations
+* Admin Operations
+* API Key Management
+* Analytics
+
+This OpenAPI file can be imported directly into:
+
+* Swagger UI
+* Swagger Editor
+* Postman
+* Insomnia
+* Stoplight
+* Laravel API Documentation generators

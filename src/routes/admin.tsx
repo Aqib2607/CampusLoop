@@ -1,8 +1,10 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Outlet, useNavigate } from "@tanstack/react-router";
 import { LayoutDashboard, Users, Package, Flag, Key, BarChart3 } from "lucide-react";
 import { SectionShell, type NavItem } from "@/components/section-shell";
+import { useAuthStore } from "@/stores";
+import { useEffect, useMemo } from "react";
 
-const items: NavItem[] = [
+const allItems: NavItem[] = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard },
   { to: "/admin/users", label: "Users", icon: Users },
   { to: "/admin/listings", label: "Listings", icon: Package },
@@ -12,5 +14,36 @@ const items: NavItem[] = [
 ];
 
 export const Route = createFileRoute("/admin")({
-  component: () => <SectionShell title="Admin" items={items}><Outlet /></SectionShell>,
+  component: AdminLayout,
 });
+
+function AdminLayout() {
+  const { user, isAuthenticated } = useAuthStore();
+  const navigate = useNavigate();
+
+  const isAllowed = isAuthenticated && (user?.role === "admin" || user?.role === "moderator");
+
+  useEffect(() => {
+    if (!isAllowed) {
+      navigate({ to: "/" });
+    }
+  }, [isAllowed, navigate]);
+
+  const items = useMemo(() => {
+    if (user?.role === "admin") return allItems;
+    // Moderators only get a subset of admin routes
+    return allItems.filter(i => 
+      ["Overview", "Listings", "Reports", "API Keys"].includes(i.label)
+    );
+  }, [user?.role]);
+
+  if (!isAllowed) {
+    return null; // Prevent flashing while redirecting
+  }
+
+  return (
+    <SectionShell title="Admin" items={items}>
+      <Outlet />
+    </SectionShell>
+  );
+}

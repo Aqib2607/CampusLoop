@@ -1,0 +1,159 @@
+{
+  "project": "CampusLoop",
+  "task": "Remove all Lovable-generated mock/demo behavior and connect the frontend exclusively to the Laravel backend",
+  "critical_instruction": "Before making any changes, analyze every document inside the /docs directory. Treat them as the single source of truth. Review Requirements Architecture Document, Functional Specification Document, Database Architecture Document, PRD, Design Document, Technology Stack Document, System Architecture Document, API Specification Document, Security Architecture Document, Role Permission Matrix, OpenAPI Documentation, and Deployment & DevOps Guide. Do not implement anything that conflicts with those documents.",
+  "objective": "Convert the frontend from a mock-data/demo implementation into a fully backend-driven application where all dynamic data originates from the Laravel API and MySQL database.",
+  "requirements": [
+    "Remove all Lovable branding, credits, references, badges, footer links, metadata, comments, and generated attribution.",
+    "Remove all mock data files.",
+    "Remove all fake JSON datasets.",
+    "Remove all hardcoded dashboard statistics.",
+    "Remove all demo users.",
+    "Remove all placeholder products.",
+    "Remove all simulated notifications.",
+    "Remove all local fake messaging systems.",
+    "Remove all frontend-only business logic that bypasses the backend.",
+    "Remove all mock Zustand state initialization values.",
+    "Remove all temporary development data generators."
+  ],
+  "backend_integration": {
+    "required": true,
+    "instructions": [
+      "Use only Laravel API responses as the source of truth.",
+      "Connect all pages to the API endpoints defined in the OpenAPI specification.",
+      "Use Axios service architecture.",
+      "Implement centralized API client.",
+      "Implement request interceptors.",
+      "Implement response interceptors.",
+      "Implement authentication token handling.",
+      "Implement automatic logout on invalid tokens.",
+      "Implement standardized error handling."
+    ]
+  },
+  "authentication": {
+    "instructions": [
+      "Replace all frontend authentication mocks.",
+      "Use Laravel Sanctum authentication flow.",
+      "Load authenticated user from backend.",
+      "Persist authentication state through API validation.",
+      "Remove fake login success handlers.",
+      "Remove local user simulation."
+    ]
+  },
+  "dashboard": {
+    "instructions": [
+      "Load dashboard metrics from backend endpoints.",
+      "Remove all hardcoded counts.",
+      "Remove all static charts.",
+      "Display only backend-provided statistics.",
+      "Implement loading states.",
+      "Implement empty states."
+    ]
+  },
+  "marketplace": {
+    "instructions": [
+      "Fetch listings from API.",
+      "Fetch categories from API.",
+      "Fetch favorites from API.",
+      "Fetch reviews from API.",
+      "Remove all static product cards.",
+      "Remove all fake listing arrays.",
+      "Use pagination from backend.",
+      "Use backend filtering and sorting."
+    ]
+  },
+  "listing_details": {
+    "instructions": [
+      "Load listing details from backend.",
+      "Load seller information from backend.",
+      "Load review data from backend.",
+      "Load images from Cloudinary URLs returned by backend."
+    ]
+  },
+  "messaging": {
+    "instructions": [
+      "Remove all simulated chat systems.",
+      "Remove local conversation storage.",
+      "Load conversations from backend.",
+      "Load messages from backend.",
+      "Prepare Socket.IO integration layer.",
+      "Use backend conversation ownership validation."
+    ]
+  },
+  "notifications": {
+    "instructions": [
+      "Remove fake notifications.",
+      "Fetch notifications from backend.",
+      "Use backend notification statuses.",
+      "Support read and unread states."
+    ]
+  },
+  "reviews": {
+    "instructions": [
+      "Fetch reviews from backend.",
+      "Fetch rating summaries from backend.",
+      "Remove all demo review content."
+    ]
+  },
+  "admin_panel": {
+    "instructions": [
+      "Connect all management tables to backend APIs.",
+      "Load users from backend.",
+      "Load reports from backend.",
+      "Load analytics from backend.",
+      "Load AI providers from backend.",
+      "Load API keys from backend.",
+      "Remove all fake administrative data."
+    ]
+  },
+  "moderator_panel": {
+    "instructions": [
+      "Load pending listings from backend.",
+      "Load reports queue from backend.",
+      "Load AI moderation queue from backend.",
+      "Remove all static moderation content."
+    ]
+  },
+  "state_management": {
+    "instructions": [
+      "Keep Zustand stores.",
+      "Convert stores into API-driven state.",
+      "Remove seeded demo data.",
+      "Use backend synchronization."
+    ]
+  },
+  "routing": {
+    "instructions": [
+      "Preserve existing route structure defined in the architecture documents.",
+      "Protect routes using backend authentication status.",
+      "Apply role-based access control according to Role Permission Matrix."
+    ]
+  },
+  "security": {
+    "instructions": [
+      "Follow Security Architecture Document.",
+      "Do not expose API keys.",
+      "Do not store sensitive data in local storage.",
+      "Enforce role-based route protection.",
+      "Implement proper authorization guards."
+    ]
+  },
+  "quality_checks": [
+    "Search the entire frontend codebase for mock data.",
+    "Search the entire frontend codebase for placeholder arrays.",
+    "Search the entire frontend codebase for hardcoded statistics.",
+    "Search the entire frontend codebase for demo users.",
+    "Search the entire frontend codebase for Lovable branding.",
+    "Replace every instance with backend-driven implementation.",
+    "Generate a report of every removed mock source."
+  ],
+  "expected_result": {
+    "frontend_type": "Production-ready frontend",
+    "data_source": "Laravel API only",
+    "database_source": "MySQL only",
+    "mock_data": false,
+    "demo_data": false,
+    "lovable_branding": false,
+    "hardcoded_content": false
+  }
+}

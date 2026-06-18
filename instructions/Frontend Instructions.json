@@ -1,0 +1,478 @@
+PROJECT NAME: CampusLoop
+
+PROJECT TYPE:
+Student Marketplace & Real-Time Communication Platform
+
+IMPORTANT:
+
+Build ONLY the frontend.
+
+DO NOT implement backend logic.
+DO NOT create fake database logic.
+DO NOT generate server-side code.
+
+Use mock services and frontend state only.
+
+The backend will be implemented separately in Laravel.
+
+---
+
+DESIGN SYSTEM
+
+Visual Style:
+
+* Modern
+* Student-friendly
+* Marketplace-first
+* Clean SaaS aesthetic
+* Mobile-first responsive
+
+Color Palette:
+
+Primary:
+#2563EB
+
+Primary Hover:
+#1D4ED8
+
+Success:
+#22C55E
+
+Warning:
+#F59E0B
+
+Danger:
+#EF4444
+
+Background:
+#F8FAFC
+
+Surface:
+#FFFFFF
+
+Text:
+#0F172A
+
+Secondary Text:
+#64748B
+
+Typography:
+
+Font:
+Inter
+
+---
+
+TECH STACK
+
+React
+TypeScript
+Vite
+TailwindCSS
+ShadCN UI
+React Router
+Zustand
+Framer Motion
+Lucide React
+
+---
+
+APPLICATION STRUCTURE
+
+Create routes:
+
+/
+
+/login
+
+/register
+
+/listings
+
+/listings/:id
+
+/favorites
+
+/messages
+
+/notifications
+
+/dashboard
+
+/dashboard/listings
+
+/dashboard/reviews
+
+/dashboard/settings
+
+/admin
+
+/admin/users
+
+/admin/listings
+
+/admin/reports
+
+/admin/api-keys
+
+/admin/analytics
+
+/moderator
+
+/moderator/listings
+
+/moderator/reports
+
+---
+
+LANDING PAGE
+
+Sections:
+
+Hero
+
+Categories
+
+Featured Listings
+
+How It Works
+
+Testimonials
+
+Footer
+
+Hero Headline:
+
+Buy, Sell & Connect Across Campus
+
+CTA Buttons:
+
+Browse Listings
+
+Create Listing
+
+---
+
+LISTINGS PAGE
+
+Features:
+
+Listing Grid
+
+Search Bar
+
+Filter Sidebar
+
+Category Filter
+
+Condition Filter
+
+Price Filter
+
+Rating Filter
+
+Sort Dropdown
+
+Responsive Cards
+
+---
+
+LISTING CARD
+
+Show:
+
+Image
+
+Title
+
+Price
+
+Category
+
+Condition
+
+Seller Rating
+
+Favorite Button
+
+Hover Animation
+
+---
+
+LISTING DETAILS PAGE
+
+Layout:
+
+Gallery
+
+Product Information
+
+Seller Information
+
+Actions:
+
+Chat Seller
+
+Save Listing
+
+Report Listing
+
+---
+
+MESSAGING SYSTEM UI
+
+Desktop Layout:
+
+Conversation List
+
+Chat Window
+
+Message Composer
+
+Support UI for:
+
+Text
+
+Images
+
+PDF
+
+Documents
+
+Voice Messages
+
+Typing Indicator UI
+
+Seen Status UI
+
+---
+
+FAVORITES PAGE
+
+Saved Listings Grid
+
+Quick Remove
+
+Quick Open
+
+---
+
+NOTIFICATIONS PAGE
+
+Grouped By:
+
+Today
+
+Yesterday
+
+Earlier
+
+Unread Indicator
+
+---
+
+USER DASHBOARD
+
+Sidebar:
+
+Dashboard
+
+My Listings
+
+Favorites
+
+Messages
+
+Reviews
+
+Settings
+
+Widgets:
+
+Active Listings
+
+Sold Listings
+
+Messages
+
+Reviews
+
+---
+
+CREATE LISTING PAGE
+
+Sections:
+
+Basic Information
+
+Pricing
+
+Condition
+
+Media Upload
+
+Expiration Settings
+
+Preview Card
+
+---
+
+MODERATOR DASHBOARD
+
+Cards:
+
+Pending Listings
+
+Open Reports
+
+AI Flags
+
+User Violations
+
+Tables:
+
+Listings Queue
+
+Reports Queue
+
+---
+
+ADMIN DASHBOARD
+
+Sections:
+
+Users
+
+Listings
+
+Categories
+
+Reports
+
+AI Providers
+
+API Keys
+
+Analytics
+
+Settings
+
+---
+
+API KEY MANAGEMENT UI
+
+Table Columns:
+
+Provider
+
+Key Name
+
+Priority
+
+Status
+
+Usage
+
+Failures
+
+Last Used
+
+Actions:
+
+Add
+
+Disable
+
+Delete
+
+Create modal forms and management tables.
+
+---
+
+ANALYTICS PAGE
+
+Charts:
+
+User Growth
+
+Listing Growth
+
+Message Activity
+
+Reports
+
+Dashboard Cards:
+
+Total Users
+
+Listings
+
+Messages
+
+Reviews
+
+---
+
+RESPONSIVE REQUIREMENTS
+
+Desktop:
+4-column listing grid
+
+Tablet:
+2-column listing grid
+
+Mobile:
+1-column listing grid
+
+Bottom navigation on mobile.
+
+---
+
+STATE MANAGEMENT
+
+Create Zustand stores:
+
+authStore
+
+userStore
+
+listingStore
+
+favoriteStore
+
+chatStore
+
+notificationStore
+
+adminStore
+
+Do not connect to backend yet.
+
+---
+
+ANIMATIONS
+
+Use Framer Motion.
+
+Keep animations subtle.
+
+Avoid excessive motion.
+
+---
+
+OUTPUT REQUIREMENTS
+
+Generate:
+
+* Complete routing structure
+* Complete page structure
+* Reusable component library
+* Responsive layouts
+* ShadCN implementation
+* Zustand stores
+* Mock data
+* Clean folder structure
+
+Do not generate Laravel code.
+Do not generate database code.
+Do not generate backend APIs.

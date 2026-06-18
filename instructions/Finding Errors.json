@@ -1,0 +1,256 @@
+{
+  "project": "CampusLoop",
+  "task": "Full Architecture Compliance Audit + Code Quality Review + Production Readiness Validation",
+  "role": "Act as a Senior Software Architect, Principal Laravel Engineer, Principal React Engineer, Security Auditor, Database Architect, QA Lead, DevOps Engineer, and Technical Reviewer simultaneously.",
+  "critical_instruction": "Before performing ANY review, analyze ALL files inside the repository and ALL documents inside the /docs directory. The documents are the single source of truth and override assumptions. Do not trust the implementation blindly. Verify everything against the documented architecture.",
+  "phase_1_document_analysis": {
+    "required": true,
+    "instructions": [
+      "Read every document in /docs.",
+      "Build an internal requirements matrix.",
+      "Build a feature-to-document mapping.",
+      "Build a database-to-document mapping.",
+      "Build an API-to-document mapping.",
+      "Build a security-to-document mapping.",
+      "Build a role-permission mapping.",
+      "Build a frontend page-to-document mapping.",
+      "Build a backend service-to-document mapping."
+    ]
+  },
+  "phase_2_repository_analysis": {
+    "required": true,
+    "instructions": [
+      "Analyze every file in the repository.",
+      "Analyze frontend source code.",
+      "Analyze backend source code.",
+      "Analyze migrations.",
+      "Analyze models.",
+      "Analyze controllers.",
+      "Analyze services.",
+      "Analyze repositories.",
+      "Analyze middleware.",
+      "Analyze policies.",
+      "Analyze events.",
+      "Analyze listeners.",
+      "Analyze notifications.",
+      "Analyze jobs.",
+      "Analyze routes.",
+      "Analyze tests.",
+      "Analyze seeders.",
+      "Analyze factories.",
+      "Analyze environment configuration.",
+      "Analyze deployment configuration."
+    ]
+  },
+  "phase_3_architecture_compliance_review": {
+    "required": true,
+    "checks": [
+      "Verify implementation matches Requirements Architecture Document.",
+      "Verify implementation matches Functional Specification Document.",
+      "Verify implementation matches Database Architecture Document.",
+      "Verify implementation matches PRD.",
+      "Verify implementation matches Design Document.",
+      "Verify implementation matches Technology Stack Document.",
+      "Verify implementation matches System Architecture Document.",
+      "Verify implementation matches API Specification Document.",
+      "Verify implementation matches Security Architecture Document.",
+      "Verify implementation matches Role Permission Matrix.",
+      "Verify implementation matches OpenAPI Documentation.",
+      "Verify implementation matches Deployment & DevOps Guide."
+    ]
+  },
+  "phase_4_frontend_review": {
+    "required": true,
+    "checks": [
+      "Detect unused components.",
+      "Detect dead code.",
+      "Detect duplicated code.",
+      "Detect missing pages.",
+      "Detect broken routes.",
+      "Detect incorrect route guards.",
+      "Detect inconsistent UI patterns.",
+      "Detect responsive issues.",
+      "Detect accessibility issues.",
+      "Detect state management problems.",
+      "Detect API integration mistakes.",
+      "Detect missing loading states.",
+      "Detect missing error states.",
+      "Detect hardcoded data.",
+      "Detect mock data.",
+      "Detect placeholder content.",
+      "Detect Lovable leftovers.",
+      "Detect inconsistent design system usage.",
+      "Verify every page follows Design Document."
+    ]
+  },
+  "phase_5_backend_review": {
+    "required": true,
+    "checks": [
+      "Detect fat controllers.",
+      "Detect missing services.",
+      "Detect missing repositories.",
+      "Detect duplicated business logic.",
+      "Detect missing validation.",
+      "Detect insecure queries.",
+      "Detect missing policies.",
+      "Detect missing authorization checks.",
+      "Detect missing error handling.",
+      "Detect missing transaction handling.",
+      "Detect missing logging.",
+      "Detect missing event architecture.",
+      "Detect missing notification handling.",
+      "Detect missing queue readiness.",
+      "Verify architecture follows service layer pattern."
+    ]
+  },
+  "phase_6_database_review": {
+    "required": true,
+    "checks": [
+      "Verify every documented table exists.",
+      "Verify every relationship exists.",
+      "Verify every foreign key exists.",
+      "Verify indexes exist where documented.",
+      "Verify soft deletes are implemented where required.",
+      "Verify audit logging tables exist.",
+      "Verify AI provider tables exist.",
+      "Verify API key tables exist.",
+      "Verify notification tables exist.",
+      "Verify messaging tables exist.",
+      "Detect missing migrations.",
+      "Detect redundant tables.",
+      "Detect schema inconsistencies.",
+      "Detect naming convention violations."
+    ]
+  },
+  "phase_7_api_review": {
+    "required": true,
+    "checks": [
+      "Compare every implemented endpoint against OpenAPI.",
+      "Compare every implemented endpoint against API Specification Document.",
+      "Detect missing endpoints.",
+      "Detect undocumented endpoints.",
+      "Detect incorrect request schemas.",
+      "Detect incorrect response schemas.",
+      "Detect inconsistent error responses.",
+      "Detect authentication mismatches.",
+      "Detect authorization mismatches.",
+      "Verify API versioning."
+    ]
+  },
+  "phase_8_security_review": {
+    "required": true,
+    "checks": [
+      "Verify Sanctum implementation.",
+      "Verify RBAC implementation.",
+      "Verify Spatie Permission integration.",
+      "Verify policy enforcement.",
+      "Verify route protection.",
+      "Verify file upload validation.",
+      "Verify API key encryption.",
+      "Verify audit logging.",
+      "Verify rate limiting.",
+      "Verify XSS protection.",
+      "Verify CSRF protection.",
+      "Verify SQL injection protection.",
+      "Verify OWASP compliance.",
+      "Detect exposed secrets.",
+      "Detect hardcoded credentials."
+    ]
+  },
+  "phase_9_ai_system_review": {
+    "required": true,
+    "checks": [
+      "Verify AI Provider architecture.",
+      "Verify Provider Manager implementation.",
+      "Verify API Key Rotation Service.",
+      "Verify automatic failover logic.",
+      "Verify encrypted API keys.",
+      "Verify provider switching logic.",
+      "Verify logging system.",
+      "Verify moderation workflow.",
+      "Verify risk scoring implementation."
+    ]
+  },
+  "phase_10_role_permission_review": {
+    "required": true,
+    "checks": [
+      "Compare every permission against Role Permission Matrix.",
+      "Detect missing permissions.",
+      "Detect privilege escalation risks.",
+      "Detect unauthorized route access.",
+      "Verify admin-only operations.",
+      "Verify moderator restrictions.",
+      "Verify ownership validations."
+    ]
+  },
+  "phase_11_devops_review": {
+    "required": true,
+    "checks": [
+      "Verify environment configuration.",
+      "Verify deployment readiness.",
+      "Verify production optimization.",
+      "Verify backup strategy.",
+      "Verify monitoring readiness.",
+      "Verify logging readiness.",
+      "Verify CI/CD readiness."
+    ]
+  },
+  "phase_12_testing_review": {
+    "required": true,
+    "checks": [
+      "Detect missing tests.",
+      "Detect uncovered business logic.",
+      "Detect missing API tests.",
+      "Detect missing authentication tests.",
+      "Detect missing authorization tests.",
+      "Detect missing integration tests.",
+      "Detect missing AI rotation tests."
+    ]
+  },
+  "bug_detection_requirements": {
+    "severity_levels": [
+      "Critical",
+      "High",
+      "Medium",
+      "Low",
+      "Improvement"
+    ],
+    "detect": [
+      "Logic bugs",
+      "Security vulnerabilities",
+      "Architecture violations",
+      "Performance bottlenecks",
+      "Data integrity risks",
+      "Race conditions",
+      "Broken relationships",
+      "Memory leaks",
+      "N+1 query issues",
+      "Missing indexes",
+      "Code smells",
+      "Maintainability issues"
+    ]
+  },
+  "output_format": {
+    "required": true,
+    "sections": [
+      "Executive Summary",
+      "Architecture Compliance Score",
+      "Frontend Findings",
+      "Backend Findings",
+      "Database Findings",
+      "API Findings",
+      "Security Findings",
+      "AI System Findings",
+      "RBAC Findings",
+      "DevOps Findings",
+      "Testing Findings",
+      "Missing Features",
+      "Document Compliance Violations",
+      "Performance Risks",
+      "Production Risks",
+      "Recommended Fixes",
+      "Priority Roadmap"
+    ]
+  },
+  "final_requirement": "Be extremely strict. Assume the code is not correct until verified. Identify every mismatch, missing feature, architecture violation, security issue, scalability concern, and quality issue. Produce a professional audit report with file-level references, root-cause analysis, severity ratings, and recommended fixes. Do not modify code during the audit. Only report findings."
+}
