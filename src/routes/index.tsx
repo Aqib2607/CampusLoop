@@ -57,7 +57,6 @@ function Landing() {
             <Link
               key={c.id}
               to="/listings"
-              search={{ category: c.id }}
               className="flex flex-col items-center justify-center gap-2 rounded-xl bg-card border border-border p-4 hover:border-primary hover:shadow-sm transition"
             >
               <div className="text-3xl">{c.icon}</div>
