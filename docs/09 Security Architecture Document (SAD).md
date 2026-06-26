@@ -16,19 +16,19 @@ Student Marketplace & Real-Time Communication Platform
 
 CampusLoop must protect:
 
-* User Accounts
-* User Conversations
-* User Uploaded Files
-* AI Provider Credentials
-* Administrative Functions
-* System Integrity
+- User Accounts
+- User Conversations
+- User Uploaded Files
+- AI Provider Credentials
+- Administrative Functions
+- System Integrity
 
 Primary Goals:
 
-* Confidentiality
-* Integrity
-* Availability
-* Accountability
+- Confidentiality
+- Integrity
+- Availability
+- Accountability
 
 ---
 
@@ -102,16 +102,16 @@ Authenticated Session
 
 Required:
 
-* Login
-* Logout
-* Session Validation
-* Token Revocation
+- Login
+- Logout
+- Session Validation
+- Token Revocation
 
 Future:
 
-* Two-Factor Authentication
-* Google Login
-* University Login
+- Two-Factor Authentication
+- Google Login
+- University Login
 
 ---
 
@@ -137,13 +137,13 @@ Minimum:
 
 Required:
 
-* Uppercase
-* Lowercase
-* Number
+- Uppercase
+- Lowercase
+- Number
 
 Recommended:
 
-* Special Character
+- Special Character
 
 ---
 
@@ -214,26 +214,26 @@ Resource Access
 
 Admin Only:
 
-* User Management
-* Moderator Management
-* Category Management
-* Analytics
+- User Management
+- Moderator Management
+- Category Management
+- Analytics
 
 ---
 
 Moderator:
 
-* Reports
-* Listing Reviews
-* User Suspension
+- Reports
+- Listing Reviews
+- User Suspension
 
 ---
 
 User:
 
-* Own Listings
-* Own Reviews
-* Own Settings
+- Own Listings
+- Own Reviews
+- Own Settings
 
 ---
 
@@ -241,9 +241,9 @@ User:
 
 All APIs Protected By:
 
-* Authentication Middleware
-* Authorization Middleware
-* Validation Layer
+- Authentication Middleware
+- Authorization Middleware
+- Validation Layer
 
 ---
 
@@ -323,10 +323,10 @@ Lock Duration:
 
 Every Input Must Validate:
 
-* Required Fields
-* Data Types
-* Length
-* Allowed Values
+- Required Fields
+- Data Types
+- Length
+- Allowed Values
 
 ---
 
@@ -382,18 +382,18 @@ Query Builder
 
 Protection Methods:
 
-* Output Escaping
-* Blade Escaping
-* React Sanitization
+- Output Escaping
+- Blade Escaping
+- React Sanitization
 
 ---
 
 User Inputs Sanitized:
 
-* Messages
-* Reviews
-* Listing Descriptions
-* Reports
+- Messages
+- Reviews
+- Listing Descriptions
+- Reports
 
 ---
 
@@ -421,10 +421,10 @@ Laravel CSRF Middleware
 
 Protected:
 
-* Form Submission
-* Profile Updates
-* Listing Updates
-* Administrative Actions
+- Form Submission
+- Profile Updates
+- Listing Updates
+- Administrative Actions
 
 ---
 
@@ -468,9 +468,9 @@ mp3
 
 Check:
 
-* MIME Type
-* Extension
-* File Size
+- MIME Type
+- Extension
+- File Size
 
 ---
 
@@ -518,9 +518,9 @@ Store URL Only
 
 Rules:
 
-* No Local File Storage
-* No Executable Uploads
-* Signed Upload Requests
+- No Local File Storage
+- No Executable Uploads
+- Signed Upload Requests
 
 ---
 
@@ -614,13 +614,13 @@ All Critical Actions Logged.
 
 Events:
 
-* Login
-* Logout
-* Listing Creation
-* Listing Deletion
-* User Suspension
-* Report Resolution
-* API Key Changes
+- Login
+- Logout
+- Listing Creation
+- Listing Deletion
+- User Suspension
+- Report Resolution
+- API Key Changes
 
 ---
 
@@ -668,9 +668,9 @@ Attachments Scanned Before Storage.
 
 Moderators Cannot:
 
-* Manage API Providers
-* Access Settings
-* Change Roles
+- Manage API Providers
+- Access Settings
+- Change Roles
 
 ---
 
@@ -872,8 +872,8 @@ Retention:
 
 Backups Must Be:
 
-* Encrypted
-* Access Controlled
+- Encrypted
+- Access Controlled
 
 ---
 

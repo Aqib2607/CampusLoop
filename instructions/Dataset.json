@@ -31,13 +31,7 @@
     ]
   },
   "roles_dataset": {
-    "roles": [
-      "Admin",
-      "Moderator",
-      "Student",
-      "Teacher",
-      "Staff"
-    ],
+    "roles": ["Admin", "Moderator", "Student", "Teacher", "Staff"],
     "requirements": [
       "Generate all permissions.",
       "Assign permissions according to Role Permission Matrix.",
@@ -141,12 +135,7 @@
       "Profile reports.",
       "Message reports."
     ],
-    "statuses": [
-      "Open",
-      "Under Review",
-      "Resolved",
-      "Dismissed"
-    ]
+    "statuses": ["Open", "Under Review", "Resolved", "Dismissed"]
   },
   "moderation_dataset": {
     "requirements": [

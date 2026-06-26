@@ -243,8 +243,8 @@ Users may only edit their own listings.
 
 Exception:
 
-* Moderator
-* Admin
+- Moderator
+- Admin
 
 ---
 
@@ -258,9 +258,9 @@ Users may only access conversations they participate in.
 
 Only Admin can permanently delete:
 
-* Users
-* Categories
-* AI Providers
+- Users
+- Categories
+- AI Providers
 
 ---
 

@@ -16,7 +16,7 @@ export const authService = {
     return data;
   },
 
-  register: async (payload: any): Promise<LoginResponse> => {
+  register: async (payload: Record<string, unknown>): Promise<LoginResponse> => {
     const { data } = await api.post("/auth/register", payload);
     return data;
   },

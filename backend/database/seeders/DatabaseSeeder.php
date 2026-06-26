@@ -15,11 +15,12 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
         ]);
 
-        // 2. Users & Settings
+        // 2. Users & Settings. Administrators and moderators are privileged
+        // staff accounts, so they do not inflate the requested 600 users.
         $this->call([
+            UserSeeder::class,
             AdminSeeder::class,
             ModeratorSeeder::class,
-            UserSeeder::class,
             UserSettingsSeeder::class,
         ]);
 

@@ -35,32 +35,32 @@ CampusLoop connects campus members through trusted commerce, communication, and 
 
 Current university trading activities rely heavily on:
 
-* Facebook Groups
-* Messenger
-* WhatsApp
-* Telegram
+- Facebook Groups
+- Messenger
+- WhatsApp
+- Telegram
 
 These platforms create multiple problems:
 
 ### Marketplace Problems
 
-* Poor search capabilities
-* Duplicate listings
-* No structured categories
-* Difficult item discovery
+- Poor search capabilities
+- Duplicate listings
+- No structured categories
+- Difficult item discovery
 
 ### Communication Problems
 
-* Lost conversations
-* Unorganized buyer inquiries
-* No transaction context
+- Lost conversations
+- Unorganized buyer inquiries
+- No transaction context
 
 ### Trust Problems
 
-* Fake profiles
-* Scam attempts
-* No reputation system
-* Lack of moderation
+- Fake profiles
+- Scam attempts
+- No reputation system
+- Lack of moderation
 
 ---
 
@@ -109,19 +109,19 @@ Arafat
 
 Needs:
 
-* Sell used books
-* Sell electronics
-* Sell furniture
+- Sell used books
+- Sell electronics
+- Sell furniture
 
 Pain Points:
 
-* Difficult buyer discovery
-* Unorganized communication
+- Difficult buyer discovery
+- Unorganized communication
 
 Success Criteria:
 
-* Fast listing creation
-* Easy buyer interaction
+- Fast listing creation
+- Easy buyer interaction
 
 ---
 
@@ -132,19 +132,19 @@ Mahi
 
 Needs:
 
-* Find affordable products
-* Compare offers
-* Contact sellers
+- Find affordable products
+- Compare offers
+- Contact sellers
 
 Pain Points:
 
-* Limited searchability
-* Fake listings
+- Limited searchability
+- Fake listings
 
 Success Criteria:
 
-* Easy product discovery
-* Safe communication
+- Easy product discovery
+- Safe communication
 
 ---
 
@@ -152,13 +152,13 @@ Success Criteria:
 
 Needs:
 
-* Buy and sell educational resources
-* Participate in university marketplace
+- Buy and sell educational resources
+- Participate in university marketplace
 
 Success Criteria:
 
-* Reliable environment
-* Professional interactions
+- Reliable environment
+- Professional interactions
 
 ---
 
@@ -166,12 +166,12 @@ Success Criteria:
 
 Needs:
 
-* Access internal marketplace
-* Exchange products/services
+- Access internal marketplace
+- Exchange products/services
 
 Success Criteria:
 
-* Simple and secure experience
+- Simple and secure experience
 
 ---
 
@@ -179,12 +179,12 @@ Success Criteria:
 
 Needs:
 
-* Efficient content review
-* Spam detection
+- Efficient content review
+- Spam detection
 
 Success Criteria:
 
-* Fast moderation workflow
+- Fast moderation workflow
 
 ---
 
@@ -192,13 +192,13 @@ Success Criteria:
 
 Needs:
 
-* Manage platform
-* Manage users
-* Manage AI services
+- Manage platform
+- Manage users
+- Manage AI services
 
 Success Criteria:
 
-* Complete platform visibility
+- Complete platform visibility
 
 ---
 
@@ -210,80 +210,80 @@ Success Criteria:
 
 ### Authentication
 
-* Registration
-* Login
-* Password Reset
+- Registration
+- Login
+- Password Reset
 
 ---
 
 ### Marketplace
 
-* Create Listing
-* Edit Listing
-* Delete Listing
-* Pause Listing
-* Mark Sold
+- Create Listing
+- Edit Listing
+- Delete Listing
+- Pause Listing
+- Mark Sold
 
 ---
 
 ### Search
 
-* Keyword Search
-* Advanced Filters
+- Keyword Search
+- Advanced Filters
 
 ---
 
 ### Favorites
 
-* Save Listings
-* Remove Favorites
+- Save Listings
+- Remove Favorites
 
 ---
 
 ### Messaging
 
-* Real-Time Chat
-* File Sharing
-* Voice Messages
+- Real-Time Chat
+- File Sharing
+- Voice Messages
 
 ---
 
 ### Reviews
 
-* Ratings
-* Reviews
+- Ratings
+- Reviews
 
 ---
 
 ### Moderation
 
-* Reporting
-* AI Screening
-* Moderator Queue
+- Reporting
+- AI Screening
+- Moderator Queue
 
 ---
 
 ### Notifications
 
-* In-App Notifications
+- In-App Notifications
 
 ---
 
 ### API Management
 
-* API Key Pool
-* Automatic Rotation
+- API Key Pool
+- Automatic Rotation
 
 ---
 
 ## Excluded From MVP
 
-* Mobile Applications
-* Payment Gateway
-* Multi-University Support
-* University Verification
-* AI Recommendation Engine
-* AI Semantic Search
+- Mobile Applications
+- Payment Gateway
+- Multi-University Support
+- University Verification
+- AI Recommendation Engine
+- AI Semantic Search
 
 ---
 
@@ -361,10 +361,10 @@ Notification Sent
 
 Users shall be able to:
 
-* Register
-* Login
-* Logout
-* Reset Password
+- Register
+- Login
+- Logout
+- Reset Password
 
 Priority:
 
@@ -376,12 +376,12 @@ Must Have
 
 Users shall be able to:
 
-* Create Listings
-* Edit Listings
-* Delete Listings
-* Pause Listings
-* Renew Listings
-* Mark Listings Sold
+- Create Listings
+- Edit Listings
+- Delete Listings
+- Pause Listings
+- Renew Listings
+- Mark Listings Sold
 
 Priority:
 
@@ -393,11 +393,11 @@ Must Have
 
 Users shall be able to search by:
 
-* Category
-* Price
-* Condition
-* Date
-* Seller Rating
+- Category
+- Price
+- Condition
+- Date
+- Seller Rating
 
 Priority:
 
@@ -409,11 +409,11 @@ Must Have
 
 Users shall be able to:
 
-* Send Text
-* Send Images
-* Send PDFs
-* Send Documents
-* Send Voice Messages
+- Send Text
+- Send Images
+- Send PDFs
+- Send Documents
+- Send Voice Messages
 
 Priority:
 
@@ -435,9 +435,9 @@ Must Have
 
 Users shall be able to:
 
-* Rate Sellers
-* Rate Buyers
-* Submit Reviews
+- Rate Sellers
+- Rate Buyers
+- Submit Reviews
 
 Priority:
 
@@ -449,9 +449,9 @@ Must Have
 
 Moderators shall be able to:
 
-* Review Reports
-* Approve Listings
-* Suspend Users
+- Review Reports
+- Approve Listings
+- Suspend Users
 
 Priority:
 
@@ -463,9 +463,9 @@ Must Have
 
 System shall:
 
-* Detect Spam
-* Detect Toxic Content
-* Detect Duplicate Listings
+- Detect Spam
+- Detect Toxic Content
+- Detect Duplicate Listings
 
 Priority:
 
@@ -477,9 +477,9 @@ Should Have
 
 System shall notify users for:
 
-* Messages
-* Reviews
-* Listing Status
+- Messages
+- Reviews
+- Listing Status
 
 Priority:
 
@@ -491,13 +491,13 @@ Must Have
 
 Admins and Moderators shall:
 
-* Add API Keys
-* Disable Keys
-* Track Usage
+- Add API Keys
+- Disable Keys
+- Track Usage
 
 System shall:
 
-* Automatically Rotate Keys
+- Automatically Rotate Keys
 
 Priority:
 
@@ -537,10 +537,10 @@ Continue
 
 Requirements:
 
-* Automatic Failover
-* Usage Tracking
-* Health Monitoring
-* Error Recovery
+- Automatic Failover
+- Usage Tracking
+- Health Monitoring
+- Error Recovery
 
 ---
 
@@ -570,11 +570,11 @@ Chat Delivery:
 
 ## Security
 
-* JWT Authentication
-* Password Hashing
-* RBAC
-* Input Validation
-* Rate Limiting
+- JWT Authentication
+- Password Hashing
+- RBAC
+- Input Validation
+- Rate Limiting
 
 ---
 
@@ -590,8 +590,8 @@ Target Availability:
 
 Target:
 
-* 10,000 Users
-* 20,000 Listings
+- 10,000 Users
+- 20,000 Listings
 
 ---
 
@@ -679,9 +679,9 @@ Target:
 
 Foundation
 
-* Authentication
-* User Profiles
-* Listings
+- Authentication
+- User Profiles
+- Listings
 
 ---
 
@@ -689,9 +689,9 @@ Foundation
 
 Marketplace
 
-* Search
-* Favorites
-* Categories
+- Search
+- Favorites
+- Categories
 
 ---
 
@@ -699,9 +699,9 @@ Marketplace
 
 Communication
 
-* Real-Time Chat
-* Attachments
-* Voice Messages
+- Real-Time Chat
+- Attachments
+- Voice Messages
 
 ---
 
@@ -709,9 +709,9 @@ Communication
 
 Trust Layer
 
-* Ratings
-* Reviews
-* Reports
+- Ratings
+- Reviews
+- Reports
 
 ---
 
@@ -719,9 +719,9 @@ Trust Layer
 
 Administration
 
-* Moderation
-* Analytics
-* Notifications
+- Moderation
+- Analytics
+- Notifications
 
 ---
 
@@ -729,9 +729,9 @@ Administration
 
 AI Layer
 
-* AI Moderation
-* API Key Rotation
-* Usage Monitoring
+- AI Moderation
+- API Key Rotation
+- Usage Monitoring
 
 ---
 
@@ -741,32 +741,32 @@ AI Layer
 
 Version 2
 
-* Student Verification
-* University Email Verification
-* Verified Badges
+- Student Verification
+- University Email Verification
+- Verified Badges
 
 ---
 
 Version 3
 
-* Multi-University Support
-* Campus Switching
+- Multi-University Support
+- Campus Switching
 
 ---
 
 Version 4
 
-* AI Search
-* AI Recommendations
-* Smart Categorization
+- AI Search
+- AI Recommendations
+- Smart Categorization
 
 ---
 
 Version 5
 
-* Mobile Application
-* Push Notifications
-* Student Community Features
+- Mobile Application
+- Push Notifications
+- Student Community Features
 
 ---
 

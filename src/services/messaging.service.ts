@@ -7,8 +7,13 @@ export const messagingService = {
     return data;
   },
 
-  getMessages: async (conversationId: number, page: number = 1): Promise<PaginatedResponse<Message>> => {
-    const { data } = await api.get(`/conversations/${conversationId}/messages`, { params: { page } });
+  getMessages: async (
+    conversationId: number,
+    page: number = 1,
+  ): Promise<PaginatedResponse<Message>> => {
+    const { data } = await api.get(`/conversations/${conversationId}/messages`, {
+      params: { page },
+    });
     return data;
   },
 

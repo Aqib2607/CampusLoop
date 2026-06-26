@@ -480,10 +480,10 @@ POST /conversations/{id}/attachments
 
 Supports:
 
-* Image
-* PDF
-* DOCX
-* Voice
+- Image
+- PDF
+- DOCX
+- Voice
 
 ---
 

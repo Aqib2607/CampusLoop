@@ -17,13 +17,13 @@ CampusLoop is a centralized student-focused marketplace and communication platfo
 
 The platform combines:
 
-* Marketplace Management
-* Real-Time Communication
-* User Verification
-* Rating & Reputation
-* Administration & Moderation
-* AI-Assisted Moderation
-* Notification Management
+- Marketplace Management
+- Real-Time Communication
+- User Verification
+- Rating & Reputation
+- Administration & Moderation
+- AI-Assisted Moderation
+- Notification Management
 
 into a single unified system.
 
@@ -35,24 +35,24 @@ The primary objective is to eliminate reliance on fragmented Facebook groups and
 
 ## Business Objectives
 
-* Enable safe student-to-student transactions
-* Improve discoverability of campus listings
-* Provide structured communication
-* Reduce marketplace spam
-* Increase trust through ratings and verification
-* Centralize campus trading activities
+- Enable safe student-to-student transactions
+- Improve discoverability of campus listings
+- Provide structured communication
+- Reduce marketplace spam
+- Increase trust through ratings and verification
+- Centralize campus trading activities
 
 ---
 
 ## Technical Objectives
 
-* Modular architecture
-* RESTful API architecture
-* Scalable database design
-* Real-time messaging
-* Cloud-based media storage
-* Role-based access control
-* AI-powered moderation support
+- Modular architecture
+- RESTful API architecture
+- Scalable database design
+- Real-time messaging
+- Cloud-based media storage
+- Role-based access control
+- AI-powered moderation support
 
 ---
 
@@ -62,19 +62,19 @@ The primary objective is to eliminate reliance on fragmented Facebook groups and
 
 Permissions:
 
-* View homepage
-* Browse public listings
-* Search listings
-* View listing details
-* Register account
-* Login
+- View homepage
+- Browse public listings
+- Search listings
+- View listing details
+- Register account
+- Login
 
 Restrictions:
 
-* Cannot chat
-* Cannot create listings
-* Cannot rate users
-* Cannot save favorites
+- Cannot chat
+- Cannot create listings
+- Cannot rate users
+- Cannot save favorites
 
 ---
 
@@ -82,15 +82,15 @@ Restrictions:
 
 Permissions:
 
-* Manage profile
-* Create listings
-* Upload images
-* Chat with users
-* Save favorites
-* Submit reviews
-* Report content
-* Receive notifications
-* Manage own listings
+- Manage profile
+- Create listings
+- Upload images
+- Chat with users
+- Save favorites
+- Submit reviews
+- Report content
+- Receive notifications
+- Manage own listings
 
 ---
 
@@ -98,8 +98,8 @@ Permissions:
 
 Permissions:
 
-* Same as student
-* Additional verified educator badge (future)
+- Same as student
+- Additional verified educator badge (future)
 
 ---
 
@@ -107,7 +107,7 @@ Permissions:
 
 Permissions:
 
-* Same as student
+- Same as student
 
 ---
 
@@ -115,16 +115,16 @@ Permissions:
 
 Permissions:
 
-* Review reports
-* Moderate chats
-* Moderate listings
-* Suspend users
-* Approve flagged content
-* Review AI moderation queue
+- Review reports
+- Moderate chats
+- Moderate listings
+- Suspend users
+- Approve flagged content
+- Review AI moderation queue
 
 Restrictions:
 
-* Cannot modify system settings
+- Cannot modify system settings
 
 ---
 
@@ -134,16 +134,16 @@ Full platform access.
 
 Permissions:
 
-* User management
-* Listing management
-* Category management
-* Report management
-* Notification management
-* Analytics dashboard
-* API Key Management
-* AI Configuration
-* System Configuration
-* Moderator Management
+- User management
+- Listing management
+- Category management
+- Report management
+- Notification management
+- Analytics dashboard
+- API Key Management
+- AI Configuration
+- System Configuration
+- Moderator Management
 
 ---
 
@@ -159,19 +159,19 @@ Manage identity and access control.
 
 Features:
 
-* Registration
-* Login
-* Forgot Password
-* Password Reset
-* Role Assignment
-* JWT Authentication
-* Session Management
+- Registration
+- Login
+- Forgot Password
+- Password Reset
+- Role Assignment
+- JWT Authentication
+- Session Management
 
 Future Features:
 
-* University Verification
-* Student ID Verification
-* University Email Verification
+- University Verification
+- Student ID Verification
+- University Email Verification
 
 ---
 
@@ -183,18 +183,18 @@ Manage personal account information.
 
 Features:
 
-* Profile Update
-* Avatar Upload
-* Bio
-* Contact Information
-* University Information
-* Account Preferences
+- Profile Update
+- Avatar Upload
+- Bio
+- Contact Information
+- University Information
+- Account Preferences
 
 Settings:
 
-* Listing Expiration Default
-* Notification Preferences
-* Privacy Settings
+- Listing Expiration Default
+- Notification Preferences
+- Privacy Settings
 
 ---
 
@@ -206,24 +206,24 @@ Core listing engine.
 
 Features:
 
-* Create Listing
-* Edit Listing
-* Delete Listing
-* Pause Listing
-* Mark as Sold
-* Renew Listing
-* Listing Expiration Control
+- Create Listing
+- Edit Listing
+- Delete Listing
+- Pause Listing
+- Mark as Sold
+- Renew Listing
+- Listing Expiration Control
 
 Supported Categories:
 
-* Books
-* Electronics
-* Furniture
-* Lab Equipment
-* Clothing
-* Notes
-* Services
-* Others
+- Books
+- Electronics
+- Furniture
+- Lab Equipment
+- Clothing
+- Notes
+- Services
+- Others
 
 Future:
 
@@ -239,14 +239,14 @@ Manage listing assets.
 
 Features:
 
-* Multiple Image Upload
-* Image Preview
-* Image Removal
-* Cloud Storage Integration
+- Multiple Image Upload
+- Image Preview
+- Image Removal
+- Cloud Storage Integration
 
 Integrations:
 
-* Cloudinary
+- Cloudinary
 
 ---
 
@@ -258,24 +258,24 @@ Help users find relevant listings.
 
 Filters:
 
-* Category
-* Price Range
-* Condition
-* Date Posted
-* Seller Rating
+- Category
+- Price Range
+- Condition
+- Date Posted
+- Seller Rating
 
 Future:
 
-* University Filter
-* AI Search
+- University Filter
+- AI Search
 
 Sorting:
 
-* Latest
-* Oldest
-* Price Low to High
-* Price High to Low
-* Most Popular
+- Latest
+- Oldest
+- Price Low to High
+- Price High to Low
+- Most Popular
 
 ---
 
@@ -287,9 +287,9 @@ Allow users to bookmark listings.
 
 Features:
 
-* Add Favorite
-* Remove Favorite
-* Favorite Dashboard
+- Add Favorite
+- Remove Favorite
+- Favorite Dashboard
 
 ---
 
@@ -301,22 +301,22 @@ Buyer-seller communication.
 
 Features:
 
-* Real-Time Chat
-* Offline Messaging
-* Image Sharing
-* PDF Sharing
-* Document Sharing
-* Voice Message Sharing
+- Real-Time Chat
+- Offline Messaging
+- Image Sharing
+- PDF Sharing
+- Document Sharing
+- Voice Message Sharing
 
 Chat Controls:
 
-* Block User
-* Report User
-* Delete Conversation
+- Block User
+- Report User
+- Delete Conversation
 
 Technology:
 
-* Socket.IO
+- Socket.IO
 
 ---
 
@@ -328,16 +328,16 @@ Build trust.
 
 Features:
 
-* Seller Ratings
-* Buyer Ratings
-* Written Reviews
-* Average Score Calculation
+- Seller Ratings
+- Buyer Ratings
+- Written Reviews
+- Average Score Calculation
 
 Metrics:
 
-* Total Reviews
-* Average Rating
-* Completed Transactions
+- Total Reviews
+- Average Rating
+- Completed Transactions
 
 ---
 
@@ -349,17 +349,17 @@ Reduce abuse and spam.
 
 Report Types:
 
-* Listing Report
-* Profile Report
-* Message Report
+- Listing Report
+- Profile Report
+- Message Report
 
 Moderation Actions:
 
-* Warning
-* Hide Listing
-* Remove Listing
-* Suspend User
-* Ban User
+- Warning
+- Hide Listing
+- Remove Listing
+- Suspend User
+- Ban User
 
 ---
 
@@ -371,10 +371,10 @@ Automated moderation support.
 
 Functions:
 
-* Spam Detection
-* Duplicate Listing Detection
-* Toxic Content Detection
-* Scam Pattern Detection
+- Spam Detection
+- Duplicate Listing Detection
+- Toxic Content Detection
+- Scam Pattern Detection
 
 Workflow:
 
@@ -394,16 +394,16 @@ User activity updates.
 
 Notification Types:
 
-* New Message
-* Listing Approved
-* Listing Sold
-* Review Received
-* Report Status Update
+- New Message
+- Listing Approved
+- Listing Sold
+- Review Received
+- Report Status Update
 
 Delivery Methods:
 
-* In-App Notifications
-* Real-Time Push Notifications
+- In-App Notifications
+- Real-Time Push Notifications
 
 ---
 
@@ -415,24 +415,24 @@ Centralized AI provider management.
 
 Access:
 
-* Admin
-* Moderator
+- Admin
+- Moderator
 
 Features:
 
-* Add API Key
-* Disable API Key
-* Delete API Key
-* Prioritize API Keys
-* Usage Tracking
+- Add API Key
+- Disable API Key
+- Delete API Key
+- Prioritize API Keys
+- Usage Tracking
 
 Supported Providers:
 
-* OpenAI
-* Gemini
-* Groq
-* Claude
-* Future Providers
+- OpenAI
+- Gemini
+- Groq
+- Claude
+- Future Providers
 
 ---
 
@@ -458,11 +458,11 @@ Continue Processing
 
 Capabilities:
 
-* Auto Rotation
-* Failover Recovery
-* Health Monitoring
-* Usage Tracking
-* Error Logging
+- Auto Rotation
+- Failover Recovery
+- Health Monitoring
+- Usage Tracking
+- Error Logging
 
 ---
 
@@ -474,13 +474,13 @@ Platform monitoring.
 
 Metrics:
 
-* Total Users
-* Active Users
-* Listings Count
-* Category Distribution
-* Messages Sent
-* Reports Created
-* AI Moderation Statistics
+- Total Users
+- Active Users
+- Listings Count
+- Category Distribution
+- Messages Sent
+- Reports Created
+- AI Moderation Statistics
 
 ---
 
@@ -502,23 +502,23 @@ Metrics:
 
 Performance:
 
-* Page Load < 3 Seconds
-* Search Response < 1 Second
-* Chat Latency < 500ms
+- Page Load < 3 Seconds
+- Search Response < 1 Second
+- Chat Latency < 500ms
 
 Scalability:
 
-* 10,000+ Users
-* 20,000+ Listings
+- 10,000+ Users
+- 20,000+ Listings
 
 Availability:
 
-* 99% uptime target
+- 99% uptime target
 
 Maintainability:
 
-* Modular architecture
-* Service-oriented backend
+- Modular architecture
+- Service-oriented backend
 
 ---
 
@@ -526,30 +526,30 @@ Maintainability:
 
 Authentication:
 
-* JWT
+- JWT
 
 Authorization:
 
-* RBAC
+- RBAC
 
 Security Features:
 
-* Password Hashing
-* Rate Limiting
-* Input Validation
-* XSS Protection
-* CSRF Protection
-* File Validation
-* Secure Upload Handling
+- Password Hashing
+- Rate Limiting
+- Input Validation
+- XSS Protection
+- CSRF Protection
+- File Validation
+- Secure Upload Handling
 
 ---
 
 # 8. Compliance Requirements
 
-* User Content Governance
-* Privacy Protection
-* Secure Credential Storage
-* Audit Logging
+- User Content Governance
+- Privacy Protection
+- Secure Credential Storage
+- Audit Logging
 
 ---
 
@@ -557,27 +557,27 @@ Security Features:
 
 Frontend:
 
-* React Application
-* Responsive UI
-* Real-Time Chat Interface
+- React Application
+- Responsive UI
+- Real-Time Chat Interface
 
 Backend:
 
-* Laravel REST API
-* JWT Authentication
-* Moderation Engine
+- Laravel REST API
+- JWT Authentication
+- Moderation Engine
 
 Database:
 
-* MySQL Schema
-* Relationships
-* Indexing Strategy
+- MySQL Schema
+- Relationships
+- Indexing Strategy
 
 Deployment:
 
-* Frontend Deployment
-* Backend Deployment
-* Database Configuration
+- Frontend Deployment
+- Backend Deployment
+- Database Configuration
 
 ---
 

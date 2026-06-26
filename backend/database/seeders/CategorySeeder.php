@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Category;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
@@ -11,24 +11,25 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Books', 'icon' => 'Book'],
+            ['name' => 'Books & Notes', 'icon' => 'BookOpen'],
             ['name' => 'Electronics', 'icon' => 'Laptop'],
-            ['name' => 'Furniture', 'icon' => 'Sofa'],
             ['name' => 'Lab Equipment', 'icon' => 'Microscope'],
-            ['name' => 'Clothing', 'icon' => 'Shirt'],
-            ['name' => 'Notes', 'icon' => 'FileText'],
-            ['name' => 'Services', 'icon' => 'Tool'],
-            ['name' => 'Others', 'icon' => 'Package'],
+            ['name' => 'Student Essentials', 'icon' => 'Backpack'],
         ];
 
-        foreach ($categories as $cat) {
-            Category::firstOrCreate([
-                'slug' => Str::slug($cat['name'])
-            ], [
-                'name' => $cat['name'],
-                'icon' => $cat['icon'],
-                'status' => true
-            ]);
+        foreach ($categories as $sortOrder => $attributes) {
+            $category = Category::withTrashed()->updateOrCreate(
+                ['slug' => Str::slug($attributes['name'])],
+                $attributes + ['status' => true, 'sort_order' => $sortOrder + 1],
+            );
+
+            if ($category->trashed()) {
+                $category->restore();
+            }
         }
+
+        Category::query()
+            ->whereNotIn('slug', array_map(fn (array $category) => Str::slug($category['name']), $categories))
+            ->update(['status' => false]);
     }
 }

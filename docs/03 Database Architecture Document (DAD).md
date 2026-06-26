@@ -16,21 +16,21 @@ ORM Layer: Laravel Eloquent
 
 CampusLoop follows a relational database architecture optimized for:
 
-* Marketplace Operations
-* Real-Time Communication
-* Moderation
-* Notifications
-* Ratings & Reviews
-* API Key Rotation
-* Audit Logging
+- Marketplace Operations
+- Real-Time Communication
+- Moderation
+- Notifications
+- Ratings & Reviews
+- API Key Rotation
+- Audit Logging
 
 Design Principles:
 
-* Normalized Schema (3NF)
-* Soft Deletes
-* Auditability
-* Horizontal Growth Readiness
-* RBAC-Based Security
+- Normalized Schema (3NF)
+- Soft Deletes
+- Auditability
+- Horizontal Growth Readiness
+- RBAC-Based Security
 
 ---
 
@@ -112,11 +112,11 @@ status INDEX
 
 Values:
 
-* Student
-* Teacher
-* Staff
-* Moderator
-* Admin
+- Student
+- Teacher
+- Staff
+- Moderator
+- Admin
 
 ---
 
@@ -200,14 +200,14 @@ Core marketplace table.
 
 Status Values:
 
-* Draft
-* Pending
-* Approved
-* Rejected
-* Published
-* Paused
-* Sold
-* Archived
+- Draft
+- Pending
+- Approved
+- Rejected
+- Published
+- Paused
+- Sold
+- Archived
 
 Indexes:
 
@@ -283,9 +283,9 @@ user_id + listing_id
 
 Status:
 
-* Active
-* Blocked
-* Closed
+- Active
+- Blocked
+- Closed
 
 ---
 
@@ -303,17 +303,17 @@ Status:
 
 Message Types:
 
-* Text
-* Image
-* PDF
-* Document
-* Voice
+- Text
+- Image
+- PDF
+- Document
+- Voice
 
 Status:
 
-* Sent
-* Delivered
-* Seen
+- Sent
+- Delivered
+- Seen
 
 Indexes:
 
@@ -394,16 +394,16 @@ Precomputed metrics.
 
 Report Types:
 
-* Listing
-* Profile
-* Message
+- Listing
+- Profile
+- Message
 
 Status:
 
-* Open
-* Under Review
-* Resolved
-* Dismissed
+- Open
+- Under Review
+- Resolved
+- Dismissed
 
 ---
 
@@ -425,12 +425,12 @@ Status:
 
 Actions:
 
-* Warning
-* Hide
-* Suspend
-* Ban
-* Approve
-* Reject
+- Warning
+- Hide
+- Suspend
+- Ban
+- Approve
+- Reject
 
 ---
 
@@ -449,10 +449,10 @@ Actions:
 
 Examples:
 
-* OpenAI
-* Gemini
-* Groq
-* Claude
+- OpenAI
+- Gemini
+- Groq
+- Claude
 
 ---
 
@@ -532,9 +532,9 @@ Tracks usage.
 
 Status:
 
-* Unread
-* Read
-* Archived
+- Unread
+- Read
+- Archived
 
 ---
 
@@ -578,14 +578,14 @@ Mandatory compliance table.
 
 Tracked Events:
 
-* Login
-* Logout
-* Create
-* Update
-* Delete
-* Suspend
-* API Key Changes
-* Moderation Actions
+- Login
+- Logout
+- Create
+- Update
+- Delete
+- Suspend
+- API Key Changes
+- Moderation Actions
 
 ---
 
@@ -593,10 +593,10 @@ Tracked Events:
 
 Enabled On:
 
-* users
-* listings
-* categories
-* conversations
+- users
+- listings
+- categories
+- conversations
 
 Implementation:
 
@@ -606,9 +606,9 @@ deleted_at TIMESTAMP NULL
 
 Benefits:
 
-* Recovery
-* Auditability
-* Compliance
+- Recovery
+- Auditability
+- Compliance
 
 ---
 
@@ -754,12 +754,12 @@ Encrypted Backup Storage
 
 Mandatory:
 
-* Encrypted API Keys
-* Password Hashing
-* RBAC Enforcement
-* Prepared Statements
-* Query Validation
-* File Upload Validation
+- Encrypted API Keys
+- Password Hashing
+- RBAC Enforcement
+- Prepared Statements
+- Query Validation
+- File Upload Validation
 
 ---
 

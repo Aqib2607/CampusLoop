@@ -15,18 +15,18 @@ Modular Monolithic Architecture
 
 CampusLoop follows a layered architecture designed to separate:
 
-* Presentation Layer
-* Business Logic Layer
-* Data Layer
-* Integration Layer
-* AI Services Layer
+- Presentation Layer
+- Business Logic Layer
+- Data Layer
+- Integration Layer
+- AI Services Layer
 
 Objectives:
 
-* Maintainability
-* Scalability
-* Security
-* Clear Separation of Concerns
+- Maintainability
+- Scalability
+- Security
+- Clear Separation of Concerns
 
 ---
 
@@ -79,9 +79,9 @@ Objectives:
 
 Framework:
 
-* React
-* TypeScript
-* Vite
+- React
+- TypeScript
+- Vite
 
 Architecture Pattern:
 
@@ -103,35 +103,35 @@ API Layer
 
 ### Public
 
-* Home
-* Browse Listings
-* Login
-* Register
+- Home
+- Browse Listings
+- Login
+- Register
 
 ### Marketplace
 
-* Listings
-* Search
-* Favorites
+- Listings
+- Search
+- Favorites
 
 ### Communication
 
-* Chat
-* Notifications
+- Chat
+- Notifications
 
 ### User
 
-* Dashboard
-* Reviews
-* Settings
+- Dashboard
+- Reviews
+- Settings
 
 ### Administration
 
-* Users
-* Reports
-* Categories
-* Analytics
-* API Keys
+- Users
+- Reports
+- Categories
+- Analytics
+- API Keys
 
 ---
 
@@ -163,9 +163,9 @@ Database
 
 Responsibilities:
 
-* Login
-* Registration
-* Permissions
+- Login
+- Registration
+- Permissions
 
 ---
 
@@ -173,8 +173,8 @@ Responsibilities:
 
 Responsibilities:
 
-* Profiles
-* Settings
+- Profiles
+- Settings
 
 ---
 
@@ -182,9 +182,9 @@ Responsibilities:
 
 Responsibilities:
 
-* Listings
-* Categories
-* Favorites
+- Listings
+- Categories
+- Favorites
 
 ---
 
@@ -192,8 +192,8 @@ Responsibilities:
 
 Responsibilities:
 
-* Conversations
-* Attachments
+- Conversations
+- Attachments
 
 ---
 
@@ -201,9 +201,9 @@ Responsibilities:
 
 Responsibilities:
 
-* Reports
-* Reviews
-* Suspensions
+- Reports
+- Reviews
+- Suspensions
 
 ---
 
@@ -211,9 +211,9 @@ Responsibilities:
 
 Responsibilities:
 
-* Content Analysis
-* API Rotation
-* Provider Routing
+- Content Analysis
+- API Rotation
+- Provider Routing
 
 ---
 
@@ -360,10 +360,10 @@ Messages Loaded
 
 Notification Sources:
 
-* Chat
-* Reviews
-* Moderation
-* Listings
+- Chat
+- Reviews
+- Moderation
+- Listings
 
 ---
 
@@ -409,10 +409,10 @@ Listing Created
 
 Metrics:
 
-* Users
-* Listings
-* Messages
-* Reports
+- Users
+- Listings
+- Messages
+- Reports
 
 ---
 
@@ -434,18 +434,18 @@ Analytics Tables
 
 Protected Areas:
 
-* Dashboard
-* Chat
-* Reviews
-* Administration
+- Dashboard
+- Chat
+- Reviews
+- Administration
 
 ---
 
 Public Areas:
 
-* Homepage
-* Browse Listings
-* Listing Details
+- Homepage
+- Browse Listings
+- Listing Details
 
 ---
 
@@ -453,8 +453,8 @@ Public Areas:
 
 Current Target:
 
-* 10,000 Users
-* 20,000 Listings
+- 10,000 Users
+- 20,000 Listings
 
 ---
 
@@ -462,19 +462,19 @@ Future Scaling:
 
 ### Database
 
-* Read Replicas
+- Read Replicas
 
 ### Search
 
-* Meilisearch
+- Meilisearch
 
 ### Queue
 
-* Redis
+- Redis
 
 ### CDN
 
-* Cloudinary CDN
+- Cloudinary CDN
 
 ---
 
@@ -530,11 +530,11 @@ External Service
 
 The system must:
 
-* Remain modular
-* Be role-driven
-* Support future multi-university expansion
-* Support future AI features
-* Maintain low operational complexity
+- Remain modular
+- Be role-driven
+- Support future multi-university expansion
+- Support future AI features
+- Maintain low operational complexity
 
 ---
 

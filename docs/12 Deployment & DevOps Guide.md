@@ -16,12 +16,12 @@ Student Marketplace & Real-Time Communication Platform
 
 The deployment architecture must provide:
 
-* Reliable Deployments
-* Automated Builds
-* Environment Isolation
-* Secure Secret Management
-* Backup & Recovery
-* Monitoring & Logging
+- Reliable Deployments
+- Automated Builds
+- Environment Isolation
+- Secure Secret Management
+- Backup & Recovery
+- Monitoring & Logging
 
 ---
 
@@ -81,9 +81,9 @@ Testing Environment
 
 Features:
 
-* Mirrors Production
-* Test Deployments
-* QA Validation
+- Mirrors Production
+- Test Deployments
+- QA Validation
 
 ---
 
@@ -95,9 +95,9 @@ Live System
 
 Requirements:
 
-* SSL Enabled
-* Optimized Build
-* Monitoring Enabled
+- SSL Enabled
+- Optimized Build
+- Monitoring Enabled
 
 ---
 
@@ -221,9 +221,9 @@ MySQL 8+
 
 Requirements:
 
-* Daily Backups
-* SSL Connections
-* Access Restrictions
+- Daily Backups
+- SSL Connections
+- Access Restrictions
 
 ---
 
@@ -253,9 +253,9 @@ Platform:
 
 Purpose:
 
-* Image Storage
-* CDN Delivery
-* Optimization
+- Image Storage
+- CDN Delivery
+- Optimization
 
 ---
 
@@ -390,9 +390,9 @@ on:
 
 Tasks:
 
-* Install
-* Build
-* Deploy
+- Install
+- Build
+- Deploy
 
 ---
 
@@ -400,9 +400,9 @@ Backend Workflow
 
 Tasks:
 
-* Composer Install
-* PHPUnit
-* Deploy
+- Composer Install
+- PHPUnit
+- Deploy
 
 ---
 
@@ -420,9 +420,9 @@ Files
 
 Use:
 
-* GitHub Secrets
-* Render Environment Variables
-* Vercel Environment Variables
+- GitHub Secrets
+- Render Environment Variables
+- Vercel Environment Variables
 
 ---
 
@@ -440,11 +440,11 @@ storage/logs
 
 Tracked Events
 
-* Authentication
-* Errors
-* Moderation
-* AI Requests
-* API Key Rotation
+- Authentication
+- Errors
+- Moderation
+- AI Requests
+- API Key Rotation
 
 ---
 
@@ -454,10 +454,10 @@ Application Monitoring
 
 Track:
 
-* Response Times
-* Error Rates
-* User Activity
-* Database Performance
+- Response Times
+- Error Rates
+- User Activity
+- Database Performance
 
 ---
 
@@ -541,10 +541,10 @@ Provider Switch
 
 Production Must Use:
 
-* HTTPS
-* SSL Database Connections
-* Encrypted Secrets
-* Protected Environment Variables
+- HTTPS
+- SSL Database Connections
+- Encrypted Secrets
+- Protected Environment Variables
 
 ---
 
@@ -588,9 +588,9 @@ Optimized Bundle
 
 Database
 
-* Indexing Enabled
-* Query Optimization
-* Eager Loading
+- Indexing Enabled
+- Query Optimization
+- Eager Loading
 
 ---
 
@@ -654,10 +654,10 @@ First 24 Hours
 
 Monitor:
 
-* Errors
-* Failed Requests
-* Login Issues
-* Messaging Issues
+- Errors
+- Failed Requests
+- Login Issues
+- Messaging Issues
 
 ---
 
@@ -665,10 +665,10 @@ First Week
 
 Monitor:
 
-* Performance
-* Moderation Queue
-* AI Usage
-* API Key Rotation
+- Performance
+- Moderation Queue
+- AI Usage
+- API Key Rotation
 
 ---
 
@@ -678,19 +678,19 @@ If avoiding paid services:
 
 Frontend:
 
-* Vercel Free
+- Vercel Free
 
 Backend:
 
-* Render Free
+- Render Free
 
 Database:
 
-* Railway Trial / Local MySQL
+- Railway Trial / Local MySQL
 
 Cloudinary:
 
-* Free Tier
+- Free Tier
 
 Estimated Cost:
 

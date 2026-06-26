@@ -53,6 +53,7 @@ export interface AiModerationLog {
 
 export interface Listing {
   id: number;
+  user_id: number;
   title: string;
   description: string;
   price: number;
@@ -118,7 +119,7 @@ export interface Notification {
   type: string;
   notifiable_type: string;
   notifiable_id: number;
-  data: any;
+  data: Record<string, unknown>;
   read_at: string | null;
   created_at: string;
 }

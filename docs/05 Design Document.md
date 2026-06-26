@@ -19,18 +19,18 @@ CampusLoop should feel like:
 
 The interface must prioritize:
 
-* Fast product discovery
-* Easy communication
-* Trust-building
-* Mobile responsiveness
-* Clean visual hierarchy
+- Fast product discovery
+- Easy communication
+- Trust-building
+- Mobile responsiveness
+- Clean visual hierarchy
 
 Avoid:
 
-* Complex enterprise layouts
-* Overloaded dashboards
-* Excessive animations
-* Dark-heavy interfaces by default
+- Complex enterprise layouts
+- Overloaded dashboards
+- Excessive animations
+- Dark-heavy interfaces by default
 
 ---
 
@@ -40,21 +40,21 @@ Avoid:
 
 CampusLoop should communicate:
 
-* Trust
-* Simplicity
-* Community
-* Accessibility
-* Reliability
+- Trust
+- Simplicity
+- Community
+- Accessibility
+- Reliability
 
 ---
 
 ## Brand Keywords
 
-* Student-Centric
-* Friendly
-* Modern
-* Organized
-* Connected
+- Student-Centric
+- Friendly
+- Modern
+- Organized
+- Connected
 
 ---
 
@@ -70,9 +70,9 @@ CampusLoop should communicate:
 
 Purpose:
 
-* Primary CTA
-* Active Navigation
-* Primary Buttons
+- Primary CTA
+- Active Navigation
+- Primary Buttons
 
 ---
 
@@ -94,9 +94,9 @@ Purpose:
 
 Used For:
 
-* Sold Items
-* Successful Actions
-* Verified Indicators
+- Sold Items
+- Successful Actions
+- Verified Indicators
 
 ---
 
@@ -108,8 +108,8 @@ Used For:
 
 Used For:
 
-* Pending Review
-* Expiring Listings
+- Pending Review
+- Expiring Listings
 
 ---
 
@@ -121,9 +121,9 @@ Used For:
 
 Used For:
 
-* Rejected Listings
-* Validation Errors
-* Reports
+- Rejected Listings
+- Validation Errors
+- Reports
 
 ---
 
@@ -196,7 +196,7 @@ Sans-serif
 
 Used:
 
-* Hero Titles
+- Hero Titles
 
 ---
 
@@ -502,11 +502,11 @@ Bottom Navigation
 
 Items:
 
-* Home
-* Search
-* Add Listing
-* Messages
-* Profile
+- Home
+- Search
+- Add Listing
+- Messages
+- Profile
 
 ---
 
@@ -520,13 +520,13 @@ Layout:
 
 Left:
 
-* Headline
-* Description
-* CTA Buttons
+- Headline
+- Description
+- CTA Buttons
 
 Right:
 
-* Marketplace Illustration
+- Marketplace Illustration
 
 Headline:
 
@@ -536,8 +536,8 @@ Buy, Sell & Connect Across Campus
 
 Buttons:
 
-* Browse Listings
-* Create Listing
+- Browse Listings
+- Create Listing
 
 ---
 
@@ -547,12 +547,12 @@ Grid Layout
 
 Cards:
 
-* Books
-* Electronics
-* Furniture
-* Notes
-* Services
-* Others
+- Books
+- Electronics
+- Furniture
+- Notes
+- Services
+- Others
 
 ---
 
@@ -588,18 +588,18 @@ Mobile:
 
 Components:
 
-* Product Image
-* Title
-* Price
-* Category
-* Condition
-* Seller Rating
-* Favorite Button
+- Product Image
+- Title
+- Price
+- Category
+- Condition
+- Seller Rating
+- Favorite Button
 
 Hover Effect:
 
-* Slight Elevation
-* Shadow Increase
+- Slight Elevation
+- Shadow Increase
 
 ---
 
@@ -619,18 +619,18 @@ Information Section
 
 Includes:
 
-* Title
-* Price
-* Condition
-* Seller
-* Rating
-* Description
+- Title
+- Price
+- Condition
+- Seller
+- Rating
+- Description
 
 Actions:
 
-* Chat Seller
-* Save Listing
-* Report Listing
+- Chat Seller
+- Save Listing
+- Report Listing
 
 ---
 
@@ -648,9 +648,9 @@ Conversation List
 
 Shows:
 
-* Avatar
-* Last Message
-* Timestamp
+- Avatar
+- Last Message
+- Timestamp
 
 ---
 
@@ -658,11 +658,11 @@ Chat Window
 
 Supports:
 
-* Text
-* Images
-* PDF
-* Documents
-* Voice
+- Text
+- Images
+- PDF
+- Documents
+- Voice
 
 ---
 
@@ -670,10 +670,10 @@ Input Area
 
 Contains:
 
-* Text Box
-* File Upload
-* Voice Upload
-* Send Button
+- Text Box
+- File Upload
+- Voice Upload
+- Send Button
 
 ---
 
@@ -696,10 +696,10 @@ Settings
 
 Dashboard Widgets
 
-* Active Listings
-* Sold Listings
-* Messages
-* Reviews
+- Active Listings
+- Sold Listings
+- Messages
+- Reviews
 
 ---
 
@@ -709,23 +709,23 @@ Sections
 
 ### Basic Information
 
-* Title
-* Description
-* Category
+- Title
+- Description
+- Category
 
 ---
 
 ### Pricing
 
-* Price
-* Negotiable Toggle
+- Price
+- Negotiable Toggle
 
 ---
 
 ### Product Information
 
-* Condition
-* Expiration Setting
+- Condition
+- Expiration Setting
 
 ---
 
@@ -743,9 +743,9 @@ Grid Layout
 
 Displays:
 
-* Saved Listings
-* Quick Remove
-* Quick Chat
+- Saved Listings
+- Quick Remove
+- Quick Chat
 
 ---
 
@@ -761,8 +761,8 @@ Earlier
 
 Statuses
 
-* Read
-* Unread
+- Read
+- Unread
 
 ---
 
@@ -770,18 +770,18 @@ Statuses
 
 Sections
 
-* Pending Listings
-* AI Flags
-* Reports Queue
-* User Violations
+- Pending Listings
+- AI Flags
+- Reports Queue
+- User Violations
 
 ---
 
 Widgets
 
-* Pending Reviews
-* Open Reports
-* AI Risk Scores
+- Pending Reviews
+- Open Reports
+- AI Risk Scores
 
 ---
 
@@ -810,19 +810,19 @@ Table Layout
 
 Columns
 
-* Provider
-* Key Name
-* Priority
-* Status
-* Usage
-* Failures
-* Last Used
+- Provider
+- Key Name
+- Priority
+- Status
+- Usage
+- Failures
+- Last Used
 
 Actions
 
-* Add
-* Disable
-* Delete
+- Add
+- Disable
+- Delete
 
 ---
 
@@ -830,17 +830,17 @@ Actions
 
 Charts
 
-* User Growth
-* Listing Growth
-* Messages Activity
-* Reports Activity
+- User Growth
+- Listing Growth
+- Messages Activity
+- Reports Activity
 
 Cards
 
-* Total Users
-* Active Listings
-* Messages Sent
-* Reviews
+- Total Users
+- Active Listings
+- Messages Sent
+- Reviews
 
 ---
 
@@ -848,10 +848,10 @@ Cards
 
 Used For
 
-* Delete Confirmation
-* Report Submission
-* User Suspension
-* API Key Creation
+- Delete Confirmation
+- Report Submission
+- User Suspension
+- API Key Creation
 
 ---
 
@@ -894,15 +894,15 @@ Mobile
 Minimum Contrast:
 
 ```css
-4.5:1
+4.5: 1;
 ```
 
 Requirements:
 
-* Keyboard Navigation
-* Focus States
-* Screen Reader Labels
-* Semantic HTML
+- Keyboard Navigation
+- Focus States
+- Screen Reader Labels
+- Semantic HTML
 
 ---
 
@@ -910,7 +910,7 @@ Requirements:
 
 Use:
 
-* Framer Motion
+- Framer Motion
 
 Animation Duration
 
@@ -920,14 +920,14 @@ Animation Duration
 
 Allowed:
 
-* Card Hover
-* Modal Open
-* Page Transition
+- Card Hover
+- Modal Open
+- Page Transition
 
 Avoid:
 
-* Excessive Motion
-* Heavy Effects
+- Excessive Motion
+- Heavy Effects
 
 ---
 

@@ -2,9 +2,9 @@ name: Security Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
-    - cron: '0 0 * * 0' # Weekly
+    - cron: "0 0 * * 0" # Weekly
 
 jobs:
   trivy:
@@ -17,12 +17,12 @@ jobs:
       - name: Run Trivy vulnerability scanner on Frontend Dockerfile
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: 'config'
+          scan-type: "config"
           hide-progress: false
-          format: 'table'
-          exit-code: '1'
+          format: "table"
+          exit-code: "1"
           ignore-unfixed: true
-          severity: 'CRITICAL,HIGH'
+          severity: "CRITICAL,HIGH"
 
       - name: TruffleHog Secret Scanning
         uses: trufflesecurity/trufflehog@main

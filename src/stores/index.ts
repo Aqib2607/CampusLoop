@@ -34,8 +34,9 @@ export const useListingStore = create<ListingState>((set) => ({
     try {
       const response = await listingService.getListings(params);
       set({ data: response, isLoading: false });
-    } catch (err: any) {
-      set({ error: err.message || "Failed to fetch listings", isLoading: false });
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to fetch listings";
+      set({ error: errorMessage, isLoading: false });
     }
   },
 }));

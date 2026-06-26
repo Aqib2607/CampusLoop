@@ -28,31 +28,37 @@ CampusLoop is deployed as a fully decoupled monolithic application:
 CampusLoop includes a highly optimized Docker environment for immediate local deployment.
 
 ### Prerequisites
+
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
 ### Installation Steps
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Aqib2607/CampusLoop.git
    cd CampusLoop
    ```
 
 2. **Configure Environment Variables**
+
    ```bash
    cp backend/.env.example backend/.env
    # Ensure you set database credentials, app keys, and AI keys in backend/.env
    ```
 
 3. **Start the Infrastructure**
+
    ```bash
    docker-compose -f docker-compose.dev.yml up -d --build
    ```
-   *This command spins up MySQL, Redis, the Laravel backend, Laravel Reverb (WebSockets), the Queue worker, the Scheduler, and the React frontend.*
+
+   _This command spins up MySQL, Redis, the Laravel backend, Laravel Reverb (WebSockets), the Queue worker, the Scheduler, and the React frontend._
 
 4. **Initialize the Application**
    Run the following commands inside the backend container to install dependencies, generate the app key, and migrate the database:
+
    ```bash
    docker-compose -f docker-compose.dev.yml exec backend composer install
    docker-compose -f docker-compose.dev.yml exec backend php artisan key:generate
@@ -66,11 +72,13 @@ CampusLoop includes a highly optimized Docker environment for immediate local de
 ## 🛡️ CI/CD & Testing
 
 CampusLoop enforces rigorous code quality and security standards via GitHub Actions:
+
 - **Pest Framework:** 80%+ Backend Feature & Unit Test coverage.
 - **Larastan/PHPStan:** Level 8 static analysis enforced on all backend commits.
 - **Trivy & TruffleHog:** Automated container vulnerability scanning and secret leakage detection.
 
 To run tests locally:
+
 ```bash
 docker-compose -f docker-compose.dev.yml exec backend ./vendor/bin/pest
 docker-compose -f docker-compose.dev.yml exec backend ./vendor/bin/phpstan analyse
@@ -79,6 +87,7 @@ docker-compose -f docker-compose.dev.yml exec backend ./vendor/bin/phpstan analy
 ## 📚 Documentation
 
 Comprehensive system documentation is available in the `/docs` directory, including:
+
 - [Requirements Architecture Document (RAD)](docs/01%20Requirements%20Architecture%20Document.md)
 - [System Architecture Document](docs/07%20System%20Architecture%20Document.md)
 - [Deployment & DevOps Guide](docs/12%20Deployment%20&%20DevOps%20Guide.md)

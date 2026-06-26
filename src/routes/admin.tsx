@@ -32,8 +32,8 @@ function AdminLayout() {
   const items = useMemo(() => {
     if (user?.role === "admin") return allItems;
     // Moderators only get a subset of admin routes
-    return allItems.filter(i => 
-      ["Overview", "Listings", "Reports", "API Keys"].includes(i.label)
+    return allItems.filter((i) =>
+      ["Overview", "Listings", "Reports", "API Keys"].includes(i.label),
     );
   }, [user?.role]);
 

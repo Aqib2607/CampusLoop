@@ -15,18 +15,18 @@ Monolithic Backend + SPA Frontend + Real-Time Communication Layer
 
 CampusLoop is designed as a modern full-stack web application using:
 
-* React Frontend
-* Laravel Backend
-* MySQL Database
-* Socket.IO Real-Time Layer
-* Cloudinary Media Storage
+- React Frontend
+- Laravel Backend
+- MySQL Database
+- Socket.IO Real-Time Layer
+- Cloudinary Media Storage
 
 Architecture Priorities:
 
-* Simplicity
-* Scalability
-* Maintainability
-* Academic Demonstration Readiness
+- Simplicity
+- Scalability
+- Maintainability
+- Academic Demonstration Readiness
 
 ---
 
@@ -44,9 +44,9 @@ React 19+
 
 Purpose:
 
-* Component-based UI
-* SPA Architecture
-* Fast Rendering
+- Component-based UI
+- SPA Architecture
+- Fast Rendering
 
 ---
 
@@ -54,9 +54,9 @@ Purpose:
 
 Purpose:
 
-* Type Safety
-* Better Maintainability
-* Reduced Runtime Errors
+- Type Safety
+- Better Maintainability
+- Reduced Runtime Errors
 
 ---
 
@@ -64,8 +64,8 @@ Purpose:
 
 Purpose:
 
-* Fast Development
-* Optimized Production Build
+- Fast Development
+- Optimized Production Build
 
 ---
 
@@ -75,9 +75,9 @@ Purpose:
 
 Purpose:
 
-* Utility-First Styling
-* Responsive Design
-* Faster UI Development
+- Utility-First Styling
+- Responsive Design
+- Faster UI Development
 
 ---
 
@@ -85,9 +85,9 @@ Purpose:
 
 Purpose:
 
-* Modern Components
-* Accessibility
-* Consistency
+- Modern Components
+- Accessibility
+- Consistency
 
 ---
 
@@ -95,8 +95,8 @@ Purpose:
 
 Purpose:
 
-* Icons
-* Lightweight Assets
+- Icons
+- Lightweight Assets
 
 ---
 
@@ -104,9 +104,9 @@ Purpose:
 
 Purpose:
 
-* UI Animations
-* Page Transitions
-* Interactive Effects
+- UI Animations
+- Page Transitions
+- Interactive Effects
 
 ---
 
@@ -116,10 +116,10 @@ Purpose:
 
 Purpose:
 
-* Lightweight Global State
-* Authentication State
-* Notification State
-* User State
+- Lightweight Global State
+- Authentication State
+- Notification State
+- User State
 
 Stores:
 
@@ -139,9 +139,9 @@ listingStore
 
 Purpose:
 
-* Route Management
-* Protected Routes
-* Lazy Loading
+- Route Management
+- Protected Routes
+- Lazy Loading
 
 ---
 
@@ -151,9 +151,9 @@ Purpose:
 
 Purpose:
 
-* REST API Requests
-* Authentication Requests
-* Error Handling
+- REST API Requests
+- Authentication Requests
+- Error Handling
 
 Configuration:
 
@@ -192,9 +192,9 @@ Laravel 12+
 
 Purpose:
 
-* REST API Development
-* Authentication
-* Business Logic
+- REST API Development
+- Authentication
+- Business Logic
 
 ---
 
@@ -214,14 +214,14 @@ PHP 8.3+
 
 Purpose:
 
-* API Authentication
-* Token Management
+- API Authentication
+- Token Management
 
 Features:
 
-* Login
-* Logout
-* Token Revocation
+- Login
+- Logout
+- Token Revocation
 
 ---
 
@@ -235,9 +235,9 @@ spatie/laravel-permission
 
 Purpose:
 
-* Roles
-* Permissions
-* Middleware Protection
+- Roles
+- Permissions
+- Middleware Protection
 
 ---
 
@@ -253,9 +253,9 @@ MySQL 8+
 
 Purpose:
 
-* Relational Data
-* Marketplace Records
-* Messaging Records
+- Relational Data
+- Marketplace Records
+- Messaging Records
 
 ---
 
@@ -263,7 +263,7 @@ Purpose:
 
 Purpose:
 
-* Version-Controlled Schema
+- Version-Controlled Schema
 
 ---
 
@@ -271,13 +271,13 @@ Purpose:
 
 Purpose:
 
-* Initial Data
+- Initial Data
 
 Examples:
 
-* Roles
-* Categories
-* Permissions
+- Roles
+- Categories
+- Permissions
 
 ---
 
@@ -287,8 +287,8 @@ Examples:
 
 Purpose:
 
-* Live Messaging
-* Real-Time Notifications
+- Live Messaging
+- Real-Time Notifications
 
 ---
 
@@ -296,7 +296,7 @@ Purpose:
 
 Purpose:
 
-* Event Dispatching
+- Event Dispatching
 
 ---
 
@@ -306,8 +306,8 @@ Future Enhancement
 
 Purpose:
 
-* Message Queue
-* Socket Scaling
+- Message Queue
+- Socket Scaling
 
 MVP:
 
@@ -321,15 +321,15 @@ Not Required
 
 Purpose:
 
-* Image Storage
-* Image Optimization
-* CDN Delivery
+- Image Storage
+- Image Optimization
+- CDN Delivery
 
 Supported:
 
-* JPG
-* PNG
-* WEBP
+- JPG
+- PNG
+- WEBP
 
 ---
 
@@ -337,8 +337,8 @@ Supported:
 
 Purpose:
 
-* Upload Management
-* Media Validation
+- Upload Management
+- Media Validation
 
 ---
 
@@ -417,11 +417,11 @@ app/
 
 Triggers:
 
-* Rate Limit
-* Quota Exceeded
-* Timeout
-* Invalid Response
-* Provider Outage
+- Rate Limit
+- Quota Exceeded
+- Timeout
+- Invalid Response
+- Provider Outage
 
 ---
 
@@ -429,11 +429,11 @@ Triggers:
 
 Track:
 
-* Successes
-* Failures
-* Last Used
-* Daily Usage
-* Error Codes
+- Successes
+- Failures
+- Last Used
+- Daily Usage
+- Error Codes
 
 ---
 
@@ -509,11 +509,11 @@ Laravel Form Requests
 
 Security Features
 
-* CSRF Protection
-* XSS Protection
-* SQL Injection Prevention
-* Rate Limiting
-* Password Hashing
+- CSRF Protection
+- XSS Protection
+- SQL Injection Prevention
+- Rate Limiting
+- Password Hashing
 
 ---
 
@@ -659,9 +659,9 @@ Recommended:
 
 Benefits:
 
-* Free Tier
-* Fast CDN
-* Easy GitHub Integration
+- Free Tier
+- Fast CDN
+- Easy GitHub Integration
 
 ---
 
@@ -673,8 +673,8 @@ Recommended:
 
 Benefits:
 
-* Laravel Support
-* Managed Deployment
+- Laravel Support
+- Managed Deployment
 
 ---
 
@@ -738,20 +738,20 @@ VITE_SOCKET_URL=
 
 Required
 
-* Cloudinary
-* Socket.IO
+- Cloudinary
+- Socket.IO
 
 Optional
 
-* OpenAI
-* Gemini
-* Groq
-* Claude
+- OpenAI
+- Gemini
+- Groq
+- Claude
 
 Future
 
-* Firebase Push Notifications
-* Google OAuth
+- Firebase Push Notifications
+- Google OAuth
 
 ---
 
@@ -759,20 +759,20 @@ Future
 
 Frontend
 
-* Route Lazy Loading
-* Component Splitting
-* Image Optimization
+- Route Lazy Loading
+- Component Splitting
+- Image Optimization
 
 Backend
 
-* Database Indexing
-* Eager Loading
-* Query Optimization
+- Database Indexing
+- Eager Loading
+- Query Optimization
 
 Media
 
-* Cloudinary Compression
-* CDN Delivery
+- Cloudinary Compression
+- CDN Delivery
 
 ---
 
@@ -782,19 +782,19 @@ Academic MVP
 
 Frontend:
 
-* Vercel Free
+- Vercel Free
 
 Backend:
 
-* Render Free
+- Render Free
 
 Database:
 
-* Railway Free Trial
+- Railway Free Trial
 
 Cloudinary:
 
-* Free Tier
+- Free Tier
 
 Estimated Cost:
 
@@ -814,9 +814,9 @@ $20 – $100/month
 
 Depending on:
 
-* Traffic
-* Storage
-* AI Usage
+- Traffic
+- Storage
+- AI Usage
 
 ---
 
@@ -852,43 +852,43 @@ Depending on:
 
 Frontend
 
-* React
-* TypeScript
-* Vite
-* Tailwind CSS
-* ShadCN UI
-* Zustand
-* Framer Motion
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- ShadCN UI
+- Zustand
+- Framer Motion
 
 Backend
 
-* Laravel
-* PHP 8.3
-* Sanctum
-* Spatie Permission
+- Laravel
+- PHP 8.3
+- Sanctum
+- Spatie Permission
 
 Database
 
-* MySQL
+- MySQL
 
 Storage
 
-* Cloudinary
+- Cloudinary
 
 Real-Time
 
-* Socket.IO
+- Socket.IO
 
 Hosting
 
-* Vercel
-* Render
-* Railway
+- Vercel
+- Render
+- Railway
 
 AI Layer
 
-* Multi-Provider Architecture
-* Automatic API Key Rotation
+- Multi-Provider Architecture
+- Automatic API Key Rotation
 
 ---
 

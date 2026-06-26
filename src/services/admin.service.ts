@@ -7,7 +7,7 @@ export const adminService = {
     return data;
   },
 
-  getAnalytics: async (): Promise<any> => {
+  getAnalytics: async (): Promise<unknown> => {
     const { data } = await api.get("/admin/analytics");
     return data;
   },

@@ -3,8 +3,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "build": "echo \"This is an API-only backend. Please run 'npm run build' in the root directory (D:\\\\CampusLoop).\"",
+        "dev": "echo \"This is an API-only backend. Please run 'npm run dev' in the root directory (D:\\\\CampusLoop).\""
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
@@ -12,5 +12,9 @@
         "laravel-vite-plugin": "^3.1",
         "tailwindcss": "^4.0.0",
         "vite": "^8.0.0"
+    },
+    "dependencies": {
+        "@tanstack/router-plugin": "^1.168.18",
+        "@vitejs/plugin-react": "^6.0.3"
     }
 }

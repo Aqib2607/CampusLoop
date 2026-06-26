@@ -208,13 +208,7 @@
     ]
   },
   "bug_detection_requirements": {
-    "severity_levels": [
-      "Critical",
-      "High",
-      "Medium",
-      "Low",
-      "Improvement"
-    ],
+    "severity_levels": ["Critical", "High", "Medium", "Low", "Improvement"],
     "detect": [
       "Logic bugs",
       "Security vulnerabilities",

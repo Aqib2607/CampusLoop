@@ -7,6 +7,7 @@ export interface GetListingsParams {
   price_max?: number;
   condition?: string;
   page?: number;
+  user_id?: number;
 }
 
 export const listingService = {
@@ -25,7 +26,9 @@ export const listingService = {
     return data;
   },
 
-  createListing: async (payload: FormData | any): Promise<{ data: Listing }> => {
+  createListing: async (
+    payload: FormData | Record<string, unknown>,
+  ): Promise<{ data: Listing }> => {
     // Note: If using FormData (for images), api client handles it.
     const { data } = await api.post("/listings", payload, {
       headers: payload instanceof FormData ? { "Content-Type": "multipart/form-data" } : {},

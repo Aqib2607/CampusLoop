@@ -12,13 +12,13 @@ Project Type: Academic Demonstration System
 
 CampusLoop is a student marketplace and communication platform supporting:
 
-* Marketplace Operations
-* User Communication
-* Moderation
-* Ratings & Reviews
-* AI-Assisted Moderation
-* Notification Management
-* API Key Rotation Management
+- Marketplace Operations
+- User Communication
+- Moderation
+- Ratings & Reviews
+- AI-Assisted Moderation
+- Notification Management
+- API Key Rotation Management
 
 ---
 
@@ -30,7 +30,7 @@ CampusLoop is a student marketplace and communication platform supporting:
 
 Actors:
 
-* Guest
+- Guest
 
 Workflow:
 
@@ -43,11 +43,11 @@ Workflow:
 
 Validation Rules:
 
-* Name Required
-* Email Required
-* Unique Email
-* Password Minimum 8 Characters
-* Password Confirmation Required
+- Name Required
+- Email Required
+- Unique Email
+- Password Minimum 8 Characters
+- Password Confirmation Required
 
 ---
 
@@ -55,11 +55,11 @@ Validation Rules:
 
 Actors:
 
-* Student
-* Teacher
-* Staff
-* Moderator
-* Admin
+- Student
+- Teacher
+- Staff
+- Moderator
+- Admin
 
 Workflow:
 
@@ -102,12 +102,12 @@ Workflow:
 
 Fields:
 
-* Full Name
-* Phone
-* Avatar
-* Bio
-* University
-* Department
+- Full Name
+- Phone
+- Avatar
+- Bio
+- University
+- Department
 
 ---
 
@@ -115,9 +115,9 @@ Fields:
 
 Settings:
 
-* Default Listing Expiry
-* Notification Preferences
-* Privacy Settings
+- Default Listing Expiry
+- Notification Preferences
+- Privacy Settings
 
 ---
 
@@ -125,13 +125,13 @@ Settings:
 
 Avatar:
 
-* JPG
-* PNG
-* WEBP
+- JPG
+- PNG
+- WEBP
 
 Maximum:
 
-* 5 MB
+- 5 MB
 
 ---
 
@@ -168,16 +168,16 @@ Workflow:
 
 Required:
 
-* Title
-* Description
-* Price
-* Category
-* Condition
+- Title
+- Description
+- Price
+- Category
+- Condition
 
 Optional:
 
-* Negotiable
-* Multiple Images
+- Negotiable
+- Multiple Images
 
 ---
 
@@ -223,10 +223,10 @@ User Configurable
 
 Examples:
 
-* 7 Days
-* 15 Days
-* 30 Days
-* 60 Days
+- 7 Days
+- 15 Days
+- 30 Days
+- 60 Days
 
 System Process:
 
@@ -246,19 +246,19 @@ Keyword Search
 
 Filters:
 
-* Category
-* Price Range
-* Condition
-* Date Posted
-* Seller Rating
+- Category
+- Price Range
+- Condition
+- Date Posted
+- Seller Rating
 
 Sorting:
 
-* Latest
-* Oldest
-* Lowest Price
-* Highest Price
-* Most Popular
+- Latest
+- Oldest
+- Lowest Price
+- Highest Price
+- Most Popular
 
 ---
 
@@ -301,7 +301,7 @@ Workflow:
 
 If Listing Deleted:
 
-* Favorite Automatically Removed
+- Favorite Automatically Removed
 
 ---
 
@@ -311,11 +311,11 @@ If Listing Deleted:
 
 Supported:
 
-* Text
-* Images
-* PDF
-* Documents
-* Voice Messages
+- Text
+- Images
+- PDF
+- Documents
+- Voice Messages
 
 ---
 
@@ -349,19 +349,19 @@ Seen
 
 Images:
 
-* JPG
-* PNG
-* WEBP
+- JPG
+- PNG
+- WEBP
 
 Documents:
 
-* PDF
-* DOCX
+- PDF
+- DOCX
 
 Voice:
 
-* MP3
-* WAV
+- MP3
+- WAV
 
 Maximum Size:
 
@@ -414,9 +414,9 @@ No Anonymous Reviews
 
 ## Calculated Metrics
 
-* Average Rating
-* Total Reviews
-* Positive Percentage
+- Average Rating
+- Total Reviews
+- Positive Percentage
 
 ---
 
@@ -428,10 +428,10 @@ No Anonymous Reviews
 
 Reasons:
 
-* Spam
-* Scam
-* Fake Product
-* Offensive Content
+- Spam
+- Scam
+- Fake Product
+- Offensive Content
 
 ---
 
@@ -439,9 +439,9 @@ Reasons:
 
 Reasons:
 
-* Fake Identity
-* Harassment
-* Fraud
+- Fake Identity
+- Harassment
+- Fraud
 
 ---
 
@@ -449,9 +449,9 @@ Reasons:
 
 Reasons:
 
-* Abuse
-* Spam
-* Threats
+- Abuse
+- Spam
+- Threats
 
 ---
 
@@ -481,15 +481,15 @@ Dismissed
 
 Can:
 
-* Hide Listings
-* Suspend Users
-* Review Reports
-* Review AI Flags
+- Hide Listings
+- Suspend Users
+- Review Reports
+- Review AI Flags
 
 Cannot:
 
-* Manage System Settings
-* Manage API Providers
+- Manage System Settings
+- Manage API Providers
 
 ---
 
@@ -517,10 +517,10 @@ Moderator Decision
 
 ## Detection Categories
 
-* Spam
-* Duplicate Content
-* Toxic Language
-* Fraud Patterns
+- Spam
+- Duplicate Content
+- Toxic Language
+- Fraud Patterns
 
 ---
 
@@ -548,10 +548,10 @@ Moderator
 
 Fields:
 
-* Provider
-* API Key
-* Priority
-* Status
+- Provider
+- API Key
+- Priority
+- Status
 
 ---
 
@@ -561,10 +561,10 @@ Automatic
 
 Conditions:
 
-* Rate Limit
-* Quota Exceeded
-* Timeout
-* API Failure
+- Rate Limit
+- Quota Exceeded
+- Timeout
+- API Failure
 
 ---
 
@@ -590,11 +590,11 @@ Success
 
 Track:
 
-* Request Count
-* Success Count
-* Failure Count
-* Last Used
-* Daily Usage
+- Request Count
+- Success Count
+- Failure Count
+- Last Used
+- Daily Usage
 
 ---
 
@@ -602,12 +602,12 @@ Track:
 
 ## Notification Events
 
-* New Message
-* Listing Approved
-* Listing Rejected
-* Listing Sold
-* New Review
-* Report Updated
+- New Message
+- Listing Approved
+- Listing Rejected
+- Listing Sold
+- New Review
+- Report Updated
 
 ---
 
@@ -640,24 +640,24 @@ Archived
 
 The system must log:
 
-* Login Events
-* Listing Creation
-* Listing Updates
-* Listing Deletion
-* User Suspension
-* Moderator Actions
-* Admin Actions
-* API Key Changes
-* AI Decisions
+- Login Events
+- Listing Creation
+- Listing Updates
+- Listing Deletion
+- User Suspension
+- Moderator Actions
+- Admin Actions
+- API Key Changes
+- AI Decisions
 
 Stored Information:
 
-* User ID
-* Action Type
-* Timestamp
-* IP Address
-* Previous Value
-* New Value
+- User ID
+- Action Type
+- Timestamp
+- IP Address
+- Previous Value
+- New Value
 
 ---
 
@@ -667,8 +667,8 @@ Stored Information:
 
 Result:
 
-* Chat Remains Available
-* Listing Shows "Removed"
+- Chat Remains Available
+- Listing Shows "Removed"
 
 ---
 
@@ -676,9 +676,9 @@ Result:
 
 Result:
 
-* Cannot Login
-* Listings Hidden
-* Chats Preserved
+- Cannot Login
+- Listings Hidden
+- Chats Preserved
 
 ---
 
@@ -686,8 +686,8 @@ Result:
 
 Result:
 
-* Auto Switch To Next Key
-* Log Incident
+- Auto Switch To Next Key
+- Log Incident
 
 ---
 
@@ -695,9 +695,9 @@ Result:
 
 Result:
 
-* Archived
-* Search Hidden
-* Owner Notified
+- Archived
+- Search Hidden
+- Owner Notified
 
 ---
 
